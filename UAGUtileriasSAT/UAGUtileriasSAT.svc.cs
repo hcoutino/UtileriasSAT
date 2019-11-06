@@ -58,7 +58,7 @@ namespace UAGUtileriasSAT
             }
             else
             {
-                filenames = Directory.GetFiles(HttpContext.Current.Server.MapPath("~/Complementos/" + carpeta + "/"));
+                filenames = Directory.GetFiles(HttpContext.Current.Server.MapPath("~/CFDI/" + carpeta + "/"));
             }
 
             if (filenames.Any())
