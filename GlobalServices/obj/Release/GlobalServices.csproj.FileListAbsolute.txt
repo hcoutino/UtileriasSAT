@@ -1,0 +1,35 @@
+C:\Users\e570327\Documents\01-02-2018\FacturacionProv2\GlobalServices\bin\Release\GlobalServices.dll
+C:\Users\e570327\Documents\01-02-2018\FacturacionProv2\GlobalServices\bin\Release\GlobalServices.pdb
+C:\Users\e570327\Documents\01-02-2018\FacturacionProv2\GlobalServices\obj\Release\GlobalServices.csprojResolveAssemblyReference.cache
+C:\Users\e570327\Documents\01-02-2018\FacturacionProv2\GlobalServices\obj\Release\GlobalServices.dll
+C:\Users\e570327\Documents\01-02-2018\FacturacionProv2\GlobalServices\obj\Release\GlobalServices.pdb
+D:\FacturacionProv2\GlobalServices\bin\Release\GlobalServices.dll
+D:\FacturacionProv2\GlobalServices\bin\Release\GlobalServices.pdb
+D:\FacturacionProv2\GlobalServices\obj\Release\GlobalServices.csprojResolveAssemblyReference.cache
+D:\FacturacionProv2\GlobalServices\obj\Release\GlobalServices.dll
+D:\FacturacionProv2\GlobalServices\obj\Release\GlobalServices.pdb
+C:\Kybel\Desarrollo Repo\UAGProveedores\GlobalServices\bin\Release\GlobalServices.dll
+C:\Kybel\Desarrollo Repo\UAGProveedores\GlobalServices\bin\Release\GlobalServices.pdb
+C:\Kybel\Desarrollo Repo\UAGProveedores\GlobalServices\obj\Release\GlobalServices.csprojResolveAssemblyReference.cache
+C:\Kybel\Desarrollo Repo\UAGProveedores\GlobalServices\obj\Release\GlobalServices.dll
+C:\Kybel\Desarrollo Repo\UAGProveedores\GlobalServices\obj\Release\GlobalServices.pdb
+C:\Users\Acer\Source\Repos\uag-proveedores-2.0\GlobalServices\bin\Release\GlobalServices.dll
+C:\Users\Acer\Source\Repos\uag-proveedores-2.0\GlobalServices\bin\Release\GlobalServices.pdb
+C:\Users\Acer\Source\Repos\uag-proveedores-2.0\GlobalServices\obj\Release\GlobalServices.csprojResolveAssemblyReference.cache
+C:\Users\Acer\Source\Repos\uag-proveedores-2.0\GlobalServices\obj\Release\GlobalServices.dll
+C:\Users\Acer\Source\Repos\uag-proveedores-2.0\GlobalServices\obj\Release\GlobalServices.pdb
+C:\Users\Acer\Source\Repos\uag-proveedores-2-0\GlobalServices\bin\Release\GlobalServices.dll
+C:\Users\Acer\Source\Repos\uag-proveedores-2-0\GlobalServices\bin\Release\GlobalServices.pdb
+C:\Users\Acer\Source\Repos\uag-proveedores-2-0\GlobalServices\obj\Release\GlobalServices.csprojResolveAssemblyReference.cache
+C:\Users\Acer\Source\Repos\uag-proveedores-2-0\GlobalServices\obj\Release\GlobalServices.dll
+C:\Users\Acer\Source\Repos\uag-proveedores-2-0\GlobalServices\obj\Release\GlobalServices.pdb
+C:\Users\lalog\Source\Repos\uag-proveedores-2-02Hugo\GlobalServices\bin\Release\GlobalServices.dll
+C:\Users\lalog\Source\Repos\uag-proveedores-2-02Hugo\GlobalServices\bin\Release\GlobalServices.pdb
+C:\Users\lalog\Source\Repos\uag-proveedores-2-02Hugo\GlobalServices\obj\Release\GlobalServices.csprojResolveAssemblyReference.cache
+C:\Users\lalog\Source\Repos\uag-proveedores-2-02Hugo\GlobalServices\obj\Release\GlobalServices.dll
+C:\Users\lalog\Source\Repos\uag-proveedores-2-02Hugo\GlobalServices\obj\Release\GlobalServices.pdb
+C:\Portales Web UAG\Proveedores2.0\GlobalServices\bin\Release\GlobalServices.dll
+C:\Portales Web UAG\Proveedores2.0\GlobalServices\bin\Release\GlobalServices.pdb
+C:\Portales Web UAG\Proveedores2.0\GlobalServices\obj\Release\GlobalServices.csprojResolveAssemblyReference.cache
+C:\Portales Web UAG\Proveedores2.0\GlobalServices\obj\Release\GlobalServices.dll
+C:\Portales Web UAG\Proveedores2.0\GlobalServices\obj\Release\GlobalServices.pdb

@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PRNFACT.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="UAG_CFDI_CP_LN">
+    <Key>
+      <PropertyRef Name="UAG_CFDI_UUID" />
+      <PropertyRef Name="UAG_CFDI_NUM_LINEA" />
+      <PropertyRef Name="UAG_CFDI_PRODSERV" />
+      <PropertyRef Name="UAG_CFDI_VALORUNIT" />
+    </Key>
+    <Property Name="UAG_CFDI_UUID" Type="varchar2" MaxLength="36" Nullable="false" />
+    <Property Name="UAG_CFDI_NUM_LINEA" Type="number" Precision="22" Scale="0" Nullable="false" />
+    <Property Name="UAG_CFDI_PRODSERV" Type="varchar2" MaxLength="8" Nullable="false" />
+    <Property Name="UAG_CFDI_CLVUNIDAD" Type="varchar2" MaxLength="3" Nullable="false" />
+    <Property Name="UAG_CFDI_DESCR" Type="varchar2" MaxLength="500" Nullable="false" />
+    <Property Name="UAG_CFDI_VALORUNIT" Type="number" Precision="22" Scale="2" Nullable="false" />
+    <Property Name="UAG_CFDI_IMPORTE" Type="number" Precision="22" Scale="2" Nullable="false" />
+    <Property Name="UAG_CFDI_DESCUENTO" Type="number" Precision="22" Scale="2" Nullable="false" />
+    <Property Name="UAG_CFDI_CANTIDAD" Type="number" Precision="24" Scale="4" />
+  </EntityType>
+  <EntityType Name="UAG_CFDI_HDR">
+    <Key>
+      <PropertyRef Name="UAG_CFDI_UUID" />
+      <PropertyRef Name="UAG_CFDI_FOLIO" />
+      <PropertyRef Name="UAG_CFDI_FORMAPAGO" />
+      <PropertyRef Name="UAG_CFDI_METODOPAG" />
+      <PropertyRef Name="UAG_CFDI_MONEDA" />
+      <PropertyRef Name="UAG_CFDI_SERIE" />
+      <PropertyRef Name="UAG_CFDI_SUBTOTAL" />
+      <PropertyRef Name="UAG_CFDI_TIPOCOMPR" />
+      <PropertyRef Name="UAG_CFDI_TOTAL" />
+      <PropertyRef Name="UAG_CFDI_VERSION" />
+      <PropertyRef Name="UAG_CFDI_EMISOR" />
+      <PropertyRef Name="UAG_CFDI_EMISORRFC" />
+      <PropertyRef Name="UAG_CFDI_EMISORREG" />
+      <PropertyRef Name="UAG_CFDI_RECEPTOR" />
+      <PropertyRef Name="UAG_CFDI_RECEPTRFC" />
+      <PropertyRef Name="UAG_CFDI_USO" />
+      <PropertyRef Name="UAG_CFDI_TIPOCAMBIO" />
+      <PropertyRef Name="UAG_CFDI_FOLIOPROV" />
+    </Key>
+    <Property Name="SOURCE" Type="varchar2" MaxLength="3" Nullable="false" />
+    <Property Name="UAG_CFDI_UUID" Type="varchar2" MaxLength="36" Nullable="false" />
+    <Property Name="UAG_CFDI_FOLIO" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="UAG_CFDI_FECHA" Type="date" />
+    <Property Name="UAG_CFDI_FORMAPAGO" Type="varchar2" MaxLength="2" Nullable="false" />
+    <Property Name="UAG_CFDI_METODOPAG" Type="varchar2" MaxLength="3" Nullable="false" />
+    <Property Name="UAG_CFDI_MONEDA" Type="varchar2" MaxLength="3" Nullable="false" />
+    <Property Name="UAG_CFDI_SERIE" Type="varchar2" MaxLength="22" Nullable="false" />
+    <Property Name="UAG_CFDI_SUBTOTAL" Type="number" Precision="22" Scale="2" Nullable="false" />
+    <Property Name="UAG_CFDI_TIPOCOMPR" Type="varchar2" MaxLength="1" Nullable="false" />
+    <Property Name="UAG_CFDI_TOTAL" Type="number" Precision="22" Scale="2" Nullable="false" />
+    <Property Name="UAG_CFDI_VERSION" Type="varchar2" MaxLength="4" Nullable="false" />
+    <Property Name="UAG_CFDI_EMISOR" Type="varchar2" MaxLength="150" Nullable="false" />
+    <Property Name="UAG_CFDI_EMISORRFC" Type="varchar2" MaxLength="13" Nullable="false" />
+    <Property Name="UAG_CFDI_EMISORREG" Type="varchar2" MaxLength="13" Nullable="false" />
+    <Property Name="UAG_CFDI_RECEPTOR" Type="varchar2" MaxLength="150" Nullable="false" />
+    <Property Name="UAG_CFDI_RECEPTRFC" Type="varchar2" MaxLength="13" Nullable="false" />
+    <Property Name="UAG_CFDI_USO" Type="varchar2" MaxLength="3" Nullable="false" />
+    <Property Name="UAG_CFDI_TIPOCAMBIO" Type="number" Precision="22" Scale="2" Nullable="false" />
+    <Property Name="UAG_CFDI_DOC" Type="blob" />
+    <Property Name="UAG_CFDI_TOTAL_LINEAS" Type="number" Precision="4" Scale="0" />
+    <Property Name="UAG_CFDI_LINEAS_REL" Type="number" Precision="4" Scale="0" />
+    <Property Name="UAG_CFDI_IVA" Type="number" Precision="22" Scale="2" />
+    <Property Name="UAG_CFDI_FOLIOPROV" Type="varchar2" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UAG_CFDI_IM_LOC">
+    <Key>
+      <PropertyRef Name="UAG_CFDI_UUID" />
+      <PropertyRef Name="UAG_CFDI_NUM_LINEA" />
+    </Key>
+    <Property Name="UAG_CFDI_UUID" Type="varchar2" MaxLength="36" Nullable="false" />
+    <Property Name="UAG_CFDI_NUM_LINEA" Type="number" Precision="22" Scale="0" Nullable="false" />
+    <Property Name="UAG_CFDI_TIPOIMP" Type="varchar2" MaxLength="1" Nullable="false" />
+    <Property Name="UAG_CFDI_IMP_LOC" Type="varchar2" MaxLength="254" Nullable="false" />
+    <Property Name="UAG_CFDI_TASACUOTA" Type="number" Precision="22" Scale="0" Nullable="false" />
+    <Property Name="UAG_CFDI_IMPORTE" Type="number" Precision="22" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UAG_CFDI_LN">
+    <Key>
+      <PropertyRef Name="UAG_CFDI_UUID" />
+      <PropertyRef Name="UAG_CFDI_NUM_LINEA" />
+      <PropertyRef Name="UAG_CFDI_PRODSERV" />
+      <PropertyRef Name="UAG_CFDI_VALORUNIT" />
+    </Key>
+    <Property Name="UAG_CFDI_UUID" Type="varchar2" MaxLength="36" Nullable="false" />
+    <Property Name="UAG_CFDI_NUM_LINEA" Type="number" Precision="22" Scale="0" Nullable="false" />
+    <Property Name="UAG_CFDI_PRODSERV" Type="varchar2" MaxLength="8" Nullable="false" />
+    <Property Name="UAG_CFDI_CLVUNIDAD" Type="varchar2" MaxLength="3" Nullable="false" />
+    <Property Name="UAG_CFDI_DESCR" Type="varchar2" MaxLength="500" Nullable="false" />
+    <Property Name="UAG_CFDI_VALORUNIT" Type="number" Precision="22" Scale="2" Nullable="false" />
+    <Property Name="UAG_CFDI_IMPORTE" Type="number" Precision="22" Scale="2" Nullable="false" />
+    <Property Name="UAG_CFDI_DESCUENTO" Type="number" Precision="22" Scale="2" Nullable="false" />
+    <Property Name="UAG_CFDI_CANTIDAD" Type="number" Precision="24" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UAG_CFDI_LN_IMP">
+    <Key>
+      <PropertyRef Name="UAG_CFDI_UUID" />
+      <PropertyRef Name="UAG_CFDI_NUM_LINEA" />
+      <PropertyRef Name="UAG_CFDI_NUMLN_IMP" />
+      <PropertyRef Name="UAG_CFDI_TIPOIMP" />
+      <PropertyRef Name="UAG_CFDI_BASE" />
+      <PropertyRef Name="UAG_CFDI_IMPUESTO" />
+      <PropertyRef Name="UAG_CFDI_TIPOFACTO" />
+      <PropertyRef Name="UAG_CFDI_TASACUOTA" />
+      <PropertyRef Name="UAG_CFDI_IMPORTE" />
+    </Key>
+    <Property Name="UAG_CFDI_UUID" Type="varchar2" MaxLength="36" Nullable="false" />
+    <Property Name="UAG_CFDI_NUM_LINEA" Type="number" Precision="22" Scale="0" Nullable="false" />
+    <Property Name="UAG_CFDI_NUMLN_IMP" Type="number" Precision="22" Scale="0" Nullable="false" />
+    <Property Name="UAG_CFDI_TIPOIMP" Type="varchar2" MaxLength="1" Nullable="false" />
+    <Property Name="UAG_CFDI_BASE" Type="number" Precision="22" Scale="2" Nullable="false" />
+    <Property Name="UAG_CFDI_IMPUESTO" Type="varchar2" MaxLength="3" Nullable="false" />
+    <Property Name="UAG_CFDI_TIPOFACTO" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="UAG_CFDI_TASACUOTA" Type="number" Precision="22" Scale="2" Nullable="false" />
+    <Property Name="UAG_CFDI_IMPORTE" Type="number" Precision="22" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UAG_COMPAG_HDR">
+    <Key>
+      <PropertyRef Name="UAG_COMPAG_UUID" />
+      <PropertyRef Name="UAG_COMPAG_FOLIO" />
+    </Key>
+    <Property Name="SOURCE" Type="varchar2" MaxLength="5" Nullable="false" />
+    <Property Name="UAG_COMPAG_UUID" Type="varchar2" MaxLength="36" Nullable="false" />
+    <Property Name="UAG_COMPAG_FOLIO" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="UAG_COMPAG_FECHA" Type="date" />
+    <Property Name="UAG_COMPAG_MONEDA" Type="varchar2" MaxLength="5" Nullable="false" />
+    <Property Name="UAG_COMPAG_SERIE" Type="varchar2" MaxLength="22" Nullable="false" />
+    <Property Name="UAG_COMPAG_SUBTOTAL" Type="number" Precision="22" Scale="2" Nullable="false" />
+    <Property Name="UAG_COMPAG_TIPOCOMPR" Type="varchar2" MaxLength="5" Nullable="false" />
+    <Property Name="UAG_COMPAG_TOTAL" Type="number" Precision="22" Scale="2" Nullable="false" />
+    <Property Name="UAG_COMPAG_VERSION" Type="varchar2" MaxLength="4" Nullable="false" />
+    <Property Name="UAG_COMPAG_EMISOR" Type="varchar2" MaxLength="150" Nullable="false" />
+    <Property Name="UAG_COMPAG_EMISORRFC" Type="varchar2" MaxLength="13" Nullable="false" />
+    <Property Name="UAG_COMPAG_EMISORREG" Type="varchar2" MaxLength="13" Nullable="false" />
+    <Property Name="UAG_COMPAG_RECEPTOR" Type="varchar2" MaxLength="150" Nullable="false" />
+    <Property Name="UAG_COMPAG_RECEPTORRFC" Type="varchar2" MaxLength="13" Nullable="false" />
+    <Property Name="UAG_COMPAG_USO" Type="varchar2" MaxLength="5" Nullable="false" />
+    <Property Name="UAG_COMPAG_DOC" Type="blob" Nullable="false" />
+    <Property Name="UAG_COMPAG_FOLIOPROV" Type="varchar2" MaxLength="40" />
+  </EntityType>
+  <EntityType Name="UAG_COMPAG_LN">
+    <Key>
+      <PropertyRef Name="UAG_COMPAG_UUID" />
+      <PropertyRef Name="UAG_COMPAG_NUM_LINEA" />
+    </Key>
+    <Property Name="UAG_COMPAG_UUID" Type="varchar2" MaxLength="36" Nullable="false" />
+    <Property Name="UAG_COMPAG_NUM_LINEA" Type="number" Precision="22" Scale="0" Nullable="false" />
+    <Property Name="UAG_COMPAG_IMPORTE" Type="number" Precision="22" Scale="0" Nullable="false" />
+    <Property Name="UAG_COMPAG_VALORUNIT" Type="number" Precision="22" Scale="0" Nullable="false" />
+    <Property Name="UAG_COMPAG_DESCR" Type="varchar2" MaxLength="500" Nullable="false" />
+    <Property Name="UAG_COMPAG_CLVUNIDAD" Type="varchar2" MaxLength="5" Nullable="false" />
+    <Property Name="UAG_COMPAG_PRODSERV" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="UAG_COMPAG_QTY" Type="number" Precision="24" Scale="4" />
+  </EntityType>
+  <EntityType Name="UAG_COMPAG_PYMNT">
+    <Key>
+      <PropertyRef Name="UAG_COMPAG_UUID" />
+      <PropertyRef Name="UAG_COMPAG_LN" />
+    </Key>
+    <Property Name="UAG_COMPAG_UUID" Type="varchar2" MaxLength="36" Nullable="false" />
+    <Property Name="UAG_COMPAG_LN" Type="number" Precision="22" Scale="0" Nullable="false" />
+    <Property Name="UAG_COMPAG_CTABEN" Type="varchar2" MaxLength="22" Nullable="false" />
+    <Property Name="UAG_COMPAG_CTABENRFC" Type="varchar2" MaxLength="20" Nullable="false" />
+    <Property Name="UAG_COMPAG_CTAORD" Type="varchar2" MaxLength="22" Nullable="false" />
+    <Property Name="UAG_COMPAG_CTAORDRFC" Type="varchar2" MaxLength="20" Nullable="false" />
+    <Property Name="UAG_COMPAG_NUMOPR" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="UAG_COMPAG_MONTO" Type="number" Precision="22" Scale="2" Nullable="false" />
+    <Property Name="UAG_COMPAG_MONEDA" Type="varchar2" MaxLength="5" Nullable="false" />
+    <Property Name="UAG_COMPAG_FORMAPAG" Type="varchar2" MaxLength="5" Nullable="false" />
+    <Property Name="UAG_COMPAG_FECHAPAG" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UAG_COMPAG_PYMNT_DOCREL">
+    <Key>
+      <PropertyRef Name="UAG_COMPAG_UUID" />
+      <PropertyRef Name="UAG_COMPAG_LN" />
+      <PropertyRef Name="UAG_COMPAG_DOC_LN" />
+    </Key>
+    <Property Name="UAG_COMPAG_UUID" Type="varchar2" MaxLength="36" Nullable="false" />
+    <Property Name="UAG_COMPAG_LN" Type="number" Precision="22" Scale="0" Nullable="false" />
+    <Property Name="UAG_COMPAG_DOC_LN" Type="number" Precision="22" Scale="0" Nullable="false" />
+    <Property Name="UAG_COMPAG_FOLIO" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="UAG_COMPAG_SERIE" Type="varchar2" MaxLength="20" Nullable="false" />
+    <Property Name="UAG_COMPAG_SALINSO" Type="number" Precision="22" Scale="2" Nullable="false" />
+    <Property Name="UAG_COMPAG_IMPPAG" Type="number" Precision="22" Scale="2" Nullable="false" />
+    <Property Name="UAG_COMPAG_SALANTE" Type="number" Precision="22" Scale="2" Nullable="false" />
+    <Property Name="UAG_COMPAG_NUMPAR" Type="number" Precision="22" Scale="2" Nullable="false" />
+    <Property Name="UAG_COMPAG_METPAG" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="UAG_COMPAG_MONEDA" Type="varchar2" MaxLength="5" Nullable="false" />
+    <Property Name="UAG_COMPAG_DOCREL" Type="varchar2" MaxLength="36" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UAG_LOG">
+    <Key>
+      <PropertyRef Name="LOG_ID" />
+    </Key>
+    <Property Name="UAG_LOG_USER" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="UAG_LOG_ACT" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="UAG_LOG_URL" Type="varchar2" MaxLength="254" Nullable="false" />
+    <Property Name="UAG_LOG_FEC" Type="date" Nullable="false" />
+    <Property Name="UAG_LOG_IP" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="LOG_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="UAG_LOG_DESCR" Type="long" />
+  </EntityType>
+  <EntityType Name="UAG_MESSAGES_SOLUCIONFACTIBLE">
+    <Key>
+      <PropertyRef Name="ID_MESSAGE" />
+    </Key>
+    <Property Name="ID_MESSAGE" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MESSAGE" Type="varchar2" MaxLength="200" Nullable="false" />
+    <Property Name="MODIFYDATE" Type="date" Nullable="false" />
+    <Property Name="USERMODIFY" Type="varchar2" MaxLength="20" Nullable="false" />
+    <Property Name="STATUS" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UAG_UUID_LOG">
+    <Key>
+      <PropertyRef Name="SOURCE" />
+      <PropertyRef Name="UAG_CFDI_UUID" />
+      <PropertyRef Name="UAG_LOG_FEC" />
+      <PropertyRef Name="UAG_LOG_ACCCION" />
+    </Key>
+    <Property Name="SOURCE" Type="varchar2" MaxLength="3" Nullable="false" />
+    <Property Name="UAG_CFDI_UUID" Type="varchar2" MaxLength="36" Nullable="false" />
+    <Property Name="UAG_LOG_FEC" Type="date" Nullable="false" />
+    <Property Name="UAG_LOG_ACCCION" Type="varchar2" MaxLength="1" Nullable="false" />
+    <Property Name="UAG_LOG_DESCR" Type="long" />
+    <Property Name="UAG_LOG_IP" Type="varchar2" MaxLength="36" />
+  </EntityType>
+  <EntityContainer Name="PRNFACTStoreContainer">
+    <EntitySet Name="UAG_CFDI_CP_LN" EntityType="Self.UAG_CFDI_CP_LN" Schema="VNDRFACT" store:Type="Tables" />
+    <EntitySet Name="UAG_CFDI_HDR" EntityType="Self.UAG_CFDI_HDR" Schema="VNDRFACT" store:Type="Tables" />
+    <EntitySet Name="UAG_CFDI_IM_LOC" EntityType="Self.UAG_CFDI_IM_LOC" Schema="VNDRFACT" store:Type="Tables" />
+    <EntitySet Name="UAG_CFDI_LN" EntityType="Self.UAG_CFDI_LN" Schema="VNDRFACT" store:Type="Tables" />
+    <EntitySet Name="UAG_CFDI_LN_IMP" EntityType="Self.UAG_CFDI_LN_IMP" Schema="VNDRFACT" store:Type="Tables" />
+    <EntitySet Name="UAG_COMPAG_HDR" EntityType="Self.UAG_COMPAG_HDR" Schema="VNDRFACT" store:Type="Tables" />
+    <EntitySet Name="UAG_COMPAG_LN" EntityType="Self.UAG_COMPAG_LN" Schema="VNDRFACT" store:Type="Tables" />
+    <EntitySet Name="UAG_COMPAG_PYMNT" EntityType="Self.UAG_COMPAG_PYMNT" Schema="VNDRFACT" store:Type="Tables" />
+    <EntitySet Name="UAG_COMPAG_PYMNT_DOCREL" EntityType="Self.UAG_COMPAG_PYMNT_DOCREL" Schema="VNDRFACT" store:Type="Tables" />
+    <EntitySet Name="UAG_LOG" EntityType="Self.UAG_LOG" Schema="VNDRFACT" store:Type="Tables" />
+    <EntitySet Name="UAG_MESSAGES_SOLUCIONFACTIBLE" EntityType="Self.UAG_MESSAGES_SOLUCIONFACTIBLE" Schema="VNDRFACT" store:Type="Tables" />
+    <EntitySet Name="UAG_UUID_LOG" EntityType="Self.UAG_UUID_LOG" Schema="VNDRFACT" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

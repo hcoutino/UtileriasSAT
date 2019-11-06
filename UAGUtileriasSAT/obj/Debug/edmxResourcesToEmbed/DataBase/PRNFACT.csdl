@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PRNFACT" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="UAG_CFDI_CP_LN">
+    <Key>
+      <PropertyRef Name="UAG_CFDI_UUID" />
+      <PropertyRef Name="UAG_CFDI_NUM_LINEA" />
+      <PropertyRef Name="UAG_CFDI_PRODSERV" />
+      <PropertyRef Name="UAG_CFDI_VALORUNIT" />
+    </Key>
+    <Property Name="UAG_CFDI_UUID" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_CFDI_NUM_LINEA" Type="Decimal" Precision="22" Scale="0" Nullable="false" />
+    <Property Name="UAG_CFDI_PRODSERV" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_CFDI_CLVUNIDAD" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_CFDI_DESCR" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_CFDI_VALORUNIT" Type="Decimal" Precision="22" Scale="2" Nullable="false" />
+    <Property Name="UAG_CFDI_IMPORTE" Type="Decimal" Precision="22" Scale="2" Nullable="false" />
+    <Property Name="UAG_CFDI_DESCUENTO" Type="Decimal" Precision="22" Scale="2" Nullable="false" />
+    <Property Name="UAG_CFDI_CANTIDAD" Type="Decimal" Precision="24" Scale="4" />
+  </EntityType>
+  <EntityType Name="UAG_CFDI_HDR">
+    <Key>
+      <PropertyRef Name="UAG_CFDI_UUID" />
+      <PropertyRef Name="UAG_CFDI_FOLIO" />
+      <PropertyRef Name="UAG_CFDI_FORMAPAGO" />
+      <PropertyRef Name="UAG_CFDI_METODOPAG" />
+      <PropertyRef Name="UAG_CFDI_MONEDA" />
+      <PropertyRef Name="UAG_CFDI_SERIE" />
+      <PropertyRef Name="UAG_CFDI_SUBTOTAL" />
+      <PropertyRef Name="UAG_CFDI_TIPOCOMPR" />
+      <PropertyRef Name="UAG_CFDI_TOTAL" />
+      <PropertyRef Name="UAG_CFDI_VERSION" />
+      <PropertyRef Name="UAG_CFDI_EMISOR" />
+      <PropertyRef Name="UAG_CFDI_EMISORRFC" />
+      <PropertyRef Name="UAG_CFDI_EMISORREG" />
+      <PropertyRef Name="UAG_CFDI_RECEPTOR" />
+      <PropertyRef Name="UAG_CFDI_RECEPTRFC" />
+      <PropertyRef Name="UAG_CFDI_USO" />
+      <PropertyRef Name="UAG_CFDI_TIPOCAMBIO" />
+      <PropertyRef Name="UAG_CFDI_FOLIOPROV" />
+    </Key>
+    <Property Name="SOURCE" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_CFDI_UUID" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_CFDI_FOLIO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_CFDI_FECHA" Type="DateTime" />
+    <Property Name="UAG_CFDI_FORMAPAGO" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_CFDI_METODOPAG" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_CFDI_MONEDA" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_CFDI_SERIE" Type="String" MaxLength="22" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_CFDI_SUBTOTAL" Type="Decimal" Precision="22" Scale="2" Nullable="false" />
+    <Property Name="UAG_CFDI_TIPOCOMPR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_CFDI_TOTAL" Type="Decimal" Precision="22" Scale="2" Nullable="false" />
+    <Property Name="UAG_CFDI_VERSION" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_CFDI_EMISOR" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_CFDI_EMISORRFC" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_CFDI_EMISORREG" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_CFDI_RECEPTOR" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_CFDI_RECEPTRFC" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_CFDI_USO" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_CFDI_TIPOCAMBIO" Type="Decimal" Precision="22" Scale="2" Nullable="false" />
+    <Property Name="UAG_CFDI_DOC" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="UAG_CFDI_TOTAL_LINEAS" Type="Int16" />
+    <Property Name="UAG_CFDI_LINEAS_REL" Type="Int16" />
+    <Property Name="UAG_CFDI_IVA" Type="Decimal" Precision="22" Scale="2" />
+    <Property Name="UAG_CFDI_FOLIOPROV" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UAG_CFDI_IM_LOC">
+    <Key>
+      <PropertyRef Name="UAG_CFDI_UUID" />
+      <PropertyRef Name="UAG_CFDI_NUM_LINEA" />
+    </Key>
+    <Property Name="UAG_CFDI_UUID" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_CFDI_NUM_LINEA" Type="Decimal" Precision="22" Scale="0" Nullable="false" />
+    <Property Name="UAG_CFDI_TIPOIMP" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_CFDI_IMP_LOC" Type="String" MaxLength="254" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_CFDI_TASACUOTA" Type="Decimal" Precision="22" Scale="0" Nullable="false" />
+    <Property Name="UAG_CFDI_IMPORTE" Type="Decimal" Precision="22" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UAG_CFDI_LN">
+    <Key>
+      <PropertyRef Name="UAG_CFDI_UUID" />
+      <PropertyRef Name="UAG_CFDI_NUM_LINEA" />
+      <PropertyRef Name="UAG_CFDI_PRODSERV" />
+      <PropertyRef Name="UAG_CFDI_VALORUNIT" />
+    </Key>
+    <Property Name="UAG_CFDI_UUID" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_CFDI_NUM_LINEA" Type="Decimal" Precision="22" Scale="0" Nullable="false" />
+    <Property Name="UAG_CFDI_PRODSERV" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_CFDI_CLVUNIDAD" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_CFDI_DESCR" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_CFDI_VALORUNIT" Type="Decimal" Precision="22" Scale="2" Nullable="false" />
+    <Property Name="UAG_CFDI_IMPORTE" Type="Decimal" Precision="22" Scale="2" Nullable="false" />
+    <Property Name="UAG_CFDI_DESCUENTO" Type="Decimal" Precision="22" Scale="2" Nullable="false" />
+    <Property Name="UAG_CFDI_CANTIDAD" Type="Decimal" Precision="24" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UAG_CFDI_LN_IMP">
+    <Key>
+      <PropertyRef Name="UAG_CFDI_UUID" />
+      <PropertyRef Name="UAG_CFDI_NUM_LINEA" />
+      <PropertyRef Name="UAG_CFDI_NUMLN_IMP" />
+      <PropertyRef Name="UAG_CFDI_TIPOIMP" />
+      <PropertyRef Name="UAG_CFDI_BASE" />
+      <PropertyRef Name="UAG_CFDI_IMPUESTO" />
+      <PropertyRef Name="UAG_CFDI_TIPOFACTO" />
+      <PropertyRef Name="UAG_CFDI_TASACUOTA" />
+      <PropertyRef Name="UAG_CFDI_IMPORTE" />
+    </Key>
+    <Property Name="UAG_CFDI_UUID" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_CFDI_NUM_LINEA" Type="Decimal" Precision="22" Scale="0" Nullable="false" />
+    <Property Name="UAG_CFDI_NUMLN_IMP" Type="Decimal" Precision="22" Scale="0" Nullable="false" />
+    <Property Name="UAG_CFDI_TIPOIMP" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_CFDI_BASE" Type="Decimal" Precision="22" Scale="2" Nullable="false" />
+    <Property Name="UAG_CFDI_IMPUESTO" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_CFDI_TIPOFACTO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_CFDI_TASACUOTA" Type="Decimal" Precision="22" Scale="2" Nullable="false" />
+    <Property Name="UAG_CFDI_IMPORTE" Type="Decimal" Precision="22" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UAG_COMPAG_HDR">
+    <Key>
+      <PropertyRef Name="UAG_COMPAG_UUID" />
+      <PropertyRef Name="UAG_COMPAG_FOLIO" />
+    </Key>
+    <Property Name="SOURCE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_COMPAG_UUID" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_COMPAG_FOLIO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_COMPAG_FECHA" Type="DateTime" />
+    <Property Name="UAG_COMPAG_MONEDA" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_COMPAG_SERIE" Type="String" MaxLength="22" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_COMPAG_SUBTOTAL" Type="Decimal" Precision="22" Scale="2" Nullable="false" />
+    <Property Name="UAG_COMPAG_TIPOCOMPR" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_COMPAG_TOTAL" Type="Decimal" Precision="22" Scale="2" Nullable="false" />
+    <Property Name="UAG_COMPAG_VERSION" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_COMPAG_EMISOR" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_COMPAG_EMISORRFC" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_COMPAG_EMISORREG" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_COMPAG_RECEPTOR" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_COMPAG_RECEPTORRFC" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_COMPAG_USO" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_COMPAG_DOC" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="UAG_COMPAG_FOLIOPROV" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="UAG_COMPAG_LN">
+    <Key>
+      <PropertyRef Name="UAG_COMPAG_UUID" />
+      <PropertyRef Name="UAG_COMPAG_NUM_LINEA" />
+    </Key>
+    <Property Name="UAG_COMPAG_UUID" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_COMPAG_NUM_LINEA" Type="Decimal" Precision="22" Scale="0" Nullable="false" />
+    <Property Name="UAG_COMPAG_IMPORTE" Type="Decimal" Precision="22" Scale="0" Nullable="false" />
+    <Property Name="UAG_COMPAG_VALORUNIT" Type="Decimal" Precision="22" Scale="0" Nullable="false" />
+    <Property Name="UAG_COMPAG_DESCR" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_COMPAG_CLVUNIDAD" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_COMPAG_PRODSERV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_COMPAG_QTY" Type="Decimal" Precision="24" Scale="4" />
+  </EntityType>
+  <EntityType Name="UAG_COMPAG_PYMNT">
+    <Key>
+      <PropertyRef Name="UAG_COMPAG_UUID" />
+      <PropertyRef Name="UAG_COMPAG_LN" />
+    </Key>
+    <Property Name="UAG_COMPAG_UUID" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_COMPAG_LN" Type="Decimal" Precision="22" Scale="0" Nullable="false" />
+    <Property Name="UAG_COMPAG_CTABEN" Type="String" MaxLength="22" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_COMPAG_CTABENRFC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_COMPAG_CTAORD" Type="String" MaxLength="22" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_COMPAG_CTAORDRFC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_COMPAG_NUMOPR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_COMPAG_MONTO" Type="Decimal" Precision="22" Scale="2" Nullable="false" />
+    <Property Name="UAG_COMPAG_MONEDA" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_COMPAG_FORMAPAG" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_COMPAG_FECHAPAG" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UAG_COMPAG_PYMNT_DOCREL">
+    <Key>
+      <PropertyRef Name="UAG_COMPAG_UUID" />
+      <PropertyRef Name="UAG_COMPAG_LN" />
+      <PropertyRef Name="UAG_COMPAG_DOC_LN" />
+    </Key>
+    <Property Name="UAG_COMPAG_UUID" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_COMPAG_LN" Type="Decimal" Precision="22" Scale="0" Nullable="false" />
+    <Property Name="UAG_COMPAG_DOC_LN" Type="Decimal" Precision="22" Scale="0" Nullable="false" />
+    <Property Name="UAG_COMPAG_FOLIO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_COMPAG_SERIE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_COMPAG_SALINSO" Type="Decimal" Precision="22" Scale="2" Nullable="false" />
+    <Property Name="UAG_COMPAG_IMPPAG" Type="Decimal" Precision="22" Scale="2" Nullable="false" />
+    <Property Name="UAG_COMPAG_SALANTE" Type="Decimal" Precision="22" Scale="2" Nullable="false" />
+    <Property Name="UAG_COMPAG_NUMPAR" Type="Decimal" Precision="22" Scale="2" Nullable="false" />
+    <Property Name="UAG_COMPAG_METPAG" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_COMPAG_MONEDA" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_COMPAG_DOCREL" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UAG_LOG">
+    <Key>
+      <PropertyRef Name="LOG_ID" />
+    </Key>
+    <Property Name="UAG_LOG_USER" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_LOG_ACT" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_LOG_URL" Type="String" MaxLength="254" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_LOG_FEC" Type="DateTime" Nullable="false" />
+    <Property Name="UAG_LOG_IP" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LOG_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="UAG_LOG_DESCR" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="UAG_MESSAGES_SOLUCIONFACTIBLE">
+    <Key>
+      <PropertyRef Name="ID_MESSAGE" />
+    </Key>
+    <Property Name="ID_MESSAGE" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MESSAGE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MODIFYDATE" Type="DateTime" Nullable="false" />
+    <Property Name="USERMODIFY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="STATUS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UAG_UUID_LOG">
+    <Key>
+      <PropertyRef Name="SOURCE" />
+      <PropertyRef Name="UAG_CFDI_UUID" />
+      <PropertyRef Name="UAG_LOG_FEC" />
+      <PropertyRef Name="UAG_LOG_ACCCION" />
+    </Key>
+    <Property Name="SOURCE" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_CFDI_UUID" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_LOG_FEC" Type="DateTime" Nullable="false" />
+    <Property Name="UAG_LOG_ACCCION" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UAG_LOG_DESCR" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UAG_LOG_IP" Type="String" MaxLength="36" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="PRNFACTEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="UAG_CFDI_CP_LN" EntityType="Self.UAG_CFDI_CP_LN" />
+    <EntitySet Name="UAG_CFDI_HDR" EntityType="Self.UAG_CFDI_HDR" />
+    <EntitySet Name="UAG_CFDI_IM_LOC" EntityType="Self.UAG_CFDI_IM_LOC" />
+    <EntitySet Name="UAG_CFDI_LN" EntityType="Self.UAG_CFDI_LN" />
+    <EntitySet Name="UAG_CFDI_LN_IMP" EntityType="Self.UAG_CFDI_LN_IMP" />
+    <EntitySet Name="UAG_COMPAG_HDR" EntityType="Self.UAG_COMPAG_HDR" />
+    <EntitySet Name="UAG_COMPAG_LN" EntityType="Self.UAG_COMPAG_LN" />
+    <EntitySet Name="UAG_COMPAG_PYMNT" EntityType="Self.UAG_COMPAG_PYMNT" />
+    <EntitySet Name="UAG_COMPAG_PYMNT_DOCREL" EntityType="Self.UAG_COMPAG_PYMNT_DOCREL" />
+    <EntitySet Name="UAG_LOG" EntityType="Self.UAG_LOG" />
+    <EntitySet Name="UAG_MESSAGES_SOLUCIONFACTIBLE" EntityType="Self.UAG_MESSAGES_SOLUCIONFACTIBLE" />
+    <EntitySet Name="UAG_UUID_LOG" EntityType="Self.UAG_UUID_LOG" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,49 @@
+C:\Users\e570327\Documents\01-02-2018\FacturacionProv2\FacturacionProv\bin\Release\FacturacionProv.dll
+C:\Users\e570327\Documents\01-02-2018\FacturacionProv2\FacturacionProv\bin\Release\FacturacionProv.pdb
+C:\Users\e570327\Documents\01-02-2018\FacturacionProv2\FacturacionProv\bin\Release\GlobalServices.dll
+C:\Users\e570327\Documents\01-02-2018\FacturacionProv2\FacturacionProv\bin\Release\GlobalServices.pdb
+C:\Users\e570327\Documents\01-02-2018\FacturacionProv2\FacturacionProv\obj\Release\FacturacionProv.csprojResolveAssemblyReference.cache
+C:\Users\e570327\Documents\01-02-2018\FacturacionProv2\FacturacionProv\obj\Release\FacturacionProv.dll
+C:\Users\e570327\Documents\01-02-2018\FacturacionProv2\FacturacionProv\obj\Release\FacturacionProv.pdb
+D:\FacturacionProv2\FacturacionProv\bin\Release\FacturacionProv.dll
+D:\FacturacionProv2\FacturacionProv\bin\Release\FacturacionProv.pdb
+D:\FacturacionProv2\FacturacionProv\bin\Release\GlobalServices.dll
+D:\FacturacionProv2\FacturacionProv\bin\Release\GlobalServices.pdb
+D:\FacturacionProv2\FacturacionProv\obj\Release\FacturacionProv.csprojResolveAssemblyReference.cache
+D:\FacturacionProv2\FacturacionProv\obj\Release\FacturacionProv.dll
+D:\FacturacionProv2\FacturacionProv\obj\Release\FacturacionProv.pdb
+C:\Kybel\Desarrollo Repo\UAGProveedores\FacturacionProv\bin\Release\FacturacionProv.dll
+C:\Kybel\Desarrollo Repo\UAGProveedores\FacturacionProv\bin\Release\FacturacionProv.pdb
+C:\Kybel\Desarrollo Repo\UAGProveedores\FacturacionProv\bin\Release\GlobalServices.dll
+C:\Kybel\Desarrollo Repo\UAGProveedores\FacturacionProv\bin\Release\GlobalServices.pdb
+C:\Kybel\Desarrollo Repo\UAGProveedores\FacturacionProv\obj\Release\FacturacionProv.csprojResolveAssemblyReference.cache
+C:\Kybel\Desarrollo Repo\UAGProveedores\FacturacionProv\obj\Release\FacturacionProv.dll
+C:\Kybel\Desarrollo Repo\UAGProveedores\FacturacionProv\obj\Release\FacturacionProv.pdb
+C:\Users\Acer\Source\Repos\uag-proveedores-2.0\FacturacionProv\bin\Release\FacturacionProv.dll
+C:\Users\Acer\Source\Repos\uag-proveedores-2.0\FacturacionProv\bin\Release\FacturacionProv.pdb
+C:\Users\Acer\Source\Repos\uag-proveedores-2.0\FacturacionProv\bin\Release\GlobalServices.dll
+C:\Users\Acer\Source\Repos\uag-proveedores-2.0\FacturacionProv\bin\Release\GlobalServices.pdb
+C:\Users\Acer\Source\Repos\uag-proveedores-2.0\FacturacionProv\obj\Release\FacturacionProv.csprojResolveAssemblyReference.cache
+C:\Users\Acer\Source\Repos\uag-proveedores-2.0\FacturacionProv\obj\Release\FacturacionProv.dll
+C:\Users\Acer\Source\Repos\uag-proveedores-2.0\FacturacionProv\obj\Release\FacturacionProv.pdb
+C:\Users\Acer\Source\Repos\uag-proveedores-2-0\FacturacionProv\bin\Release\FacturacionProv.dll
+C:\Users\Acer\Source\Repos\uag-proveedores-2-0\FacturacionProv\bin\Release\FacturacionProv.pdb
+C:\Users\Acer\Source\Repos\uag-proveedores-2-0\FacturacionProv\bin\Release\GlobalServices.dll
+C:\Users\Acer\Source\Repos\uag-proveedores-2-0\FacturacionProv\bin\Release\GlobalServices.pdb
+C:\Users\Acer\Source\Repos\uag-proveedores-2-0\FacturacionProv\obj\Release\FacturacionProv.csprojResolveAssemblyReference.cache
+C:\Users\Acer\Source\Repos\uag-proveedores-2-0\FacturacionProv\obj\Release\FacturacionProv.dll
+C:\Users\Acer\Source\Repos\uag-proveedores-2-0\FacturacionProv\obj\Release\FacturacionProv.pdb
+C:\Users\lalog\Source\Repos\uag-proveedores-2-02Hugo\FacturacionProv\bin\Release\FacturacionProv.dll
+C:\Users\lalog\Source\Repos\uag-proveedores-2-02Hugo\FacturacionProv\bin\Release\FacturacionProv.pdb
+C:\Users\lalog\Source\Repos\uag-proveedores-2-02Hugo\FacturacionProv\bin\Release\GlobalServices.dll
+C:\Users\lalog\Source\Repos\uag-proveedores-2-02Hugo\FacturacionProv\bin\Release\GlobalServices.pdb
+C:\Users\lalog\Source\Repos\uag-proveedores-2-02Hugo\FacturacionProv\obj\Release\FacturacionProv.csprojResolveAssemblyReference.cache
+C:\Users\lalog\Source\Repos\uag-proveedores-2-02Hugo\FacturacionProv\obj\Release\FacturacionProv.dll
+C:\Users\lalog\Source\Repos\uag-proveedores-2-02Hugo\FacturacionProv\obj\Release\FacturacionProv.pdb
+C:\Portales Web UAG\Proveedores2.0\FacturacionProv\bin\Release\FacturacionProv.dll
+C:\Portales Web UAG\Proveedores2.0\FacturacionProv\bin\Release\FacturacionProv.pdb
+C:\Portales Web UAG\Proveedores2.0\FacturacionProv\bin\Release\GlobalServices.dll
+C:\Portales Web UAG\Proveedores2.0\FacturacionProv\bin\Release\GlobalServices.pdb
+C:\Portales Web UAG\Proveedores2.0\FacturacionProv\obj\Release\FacturacionProv.csprojResolveAssemblyReference.cache
+C:\Portales Web UAG\Proveedores2.0\FacturacionProv\obj\Release\FacturacionProv.dll
+C:\Portales Web UAG\Proveedores2.0\FacturacionProv\obj\Release\FacturacionProv.pdb

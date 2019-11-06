@@ -1,0 +1,263 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E05FCD09-B3DB-40E8-BBDB-4860F4E84BB3}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UAGUtileriasSAT</RootNamespace>
+    <AssemblyName>UAGUtileriasSAT</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.12.2.1100\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\solucionfactible\configuration91.svcinfo" />
+    <None Include="Connected Services\solucionfactible\configuration.svcinfo" />
+    <None Include="Connected Services\solucionfactible\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="DataBase\PRNFACT.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PRNFACT.edmx</DependentUpon>
+      <LastGenOutput>PRNFACT.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DataBase\PRNFACT.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PRNFACT.edmx</DependentUpon>
+      <LastGenOutput>PRNFACT.cs</LastGenOutput>
+    </Content>
+    <Content Include="UAGUtileriasSAT.svc" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\solucionfactible\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\PRNFACT.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PRNFACT.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\PRNFACT.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PRNFACT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\PRNFACT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PRNFACT.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\UAG_CFDI_CP_LN.cs">
+      <DependentUpon>PRNFACT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\UAG_CFDI_HDR.cs">
+      <DependentUpon>PRNFACT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\UAG_CFDI_IM_LOC.cs">
+      <DependentUpon>PRNFACT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\UAG_CFDI_LN.cs">
+      <DependentUpon>PRNFACT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\UAG_CFDI_LN_IMP.cs">
+      <DependentUpon>PRNFACT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\UAG_COMPAG_HDR.cs">
+      <DependentUpon>PRNFACT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\UAG_COMPAG_LN.cs">
+      <DependentUpon>PRNFACT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\UAG_COMPAG_PYMNT.cs">
+      <DependentUpon>PRNFACT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\UAG_COMPAG_PYMNT_DOCREL.cs">
+      <DependentUpon>PRNFACT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\UAG_LOG.cs">
+      <DependentUpon>PRNFACT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\UAG_MESSAGES_SOLUCIONFACTIBLE.cs">
+      <DependentUpon>PRNFACT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\UAG_UUID_LOG.cs">
+      <DependentUpon>PRNFACT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FacturacionProv\Enterprise.cs" />
+    <Compile Include="FacturacionProv\Invoice.cs" />
+    <Compile Include="FacturacionProv\PaymentMethod.cs" />
+    <Compile Include="FacturacionProv\Rfc.cs" />
+    <Compile Include="FacturacionProv\XMLFactura.cs" />
+    <Compile Include="FacturacionProv\XMLSolucion.cs" />
+    <Compile Include="Metodos\Generales.cs" />
+    <Compile Include="Metodos\SaveCompag.cs" />
+    <Compile Include="Metodos\SaveFromXML.cs" />
+    <Compile Include="UAGUtileriasSAT.svc.cs">
+      <DependentUpon>UAGUtileriasSAT.svc</DependentUpon>
+    </Compile>
+    <Compile Include="IUAGUtileriasSAT.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="DataBase\PRNFACT.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PRNFACT.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DataBase\PRNFACT.edmx.diagram">
+      <DependentUpon>PRNFACT.edmx</DependentUpon>
+    </Content>
+    <None Include="Connected Services\solucionfactible\RecibeCFD.wsdl" />
+    <Content Include="Connected Services\solucionfactible\UAGUtileriasSAT.solucionfactible.consultarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\solucionfactible\UAGUtileriasSAT.solucionfactible.Entrega.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\solucionfactible\UAGUtileriasSAT.solucionfactible.EntregaCustom.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\solucionfactible\UAGUtileriasSAT.solucionfactible.obtenerPDFResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\solucionfactible\UAGUtileriasSAT.solucionfactible.rechazarAddendaCFDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\solucionfactible\UAGUtileriasSAT.solucionfactible.rechazarCFDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\solucionfactible\UAGUtileriasSAT.solucionfactible.recibeCFDCustomResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\solucionfactible\UAGUtileriasSAT.solucionfactible.recibeCFDEnBuzonResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\solucionfactible\UAGUtileriasSAT.solucionfactible.recibeCFDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\solucionfactible\UAGUtileriasSAT.solucionfactible.RespuestaConsulta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\solucionfactible\UAGUtileriasSAT.solucionfactible.RespuestaPDF.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\solucionfactible\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54183</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:54183/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

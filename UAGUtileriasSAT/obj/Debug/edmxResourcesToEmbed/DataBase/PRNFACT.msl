@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PRNFACTStoreContainer" CdmEntityContainer="PRNFACTEntities">
+    <EntitySetMapping Name="UAG_CFDI_CP_LN">
+      <EntityTypeMapping TypeName="PRNFACT.UAG_CFDI_CP_LN">
+        <MappingFragment StoreEntitySet="UAG_CFDI_CP_LN">
+          <ScalarProperty Name="UAG_CFDI_UUID" ColumnName="UAG_CFDI_UUID" />
+          <ScalarProperty Name="UAG_CFDI_NUM_LINEA" ColumnName="UAG_CFDI_NUM_LINEA" />
+          <ScalarProperty Name="UAG_CFDI_PRODSERV" ColumnName="UAG_CFDI_PRODSERV" />
+          <ScalarProperty Name="UAG_CFDI_CLVUNIDAD" ColumnName="UAG_CFDI_CLVUNIDAD" />
+          <ScalarProperty Name="UAG_CFDI_DESCR" ColumnName="UAG_CFDI_DESCR" />
+          <ScalarProperty Name="UAG_CFDI_VALORUNIT" ColumnName="UAG_CFDI_VALORUNIT" />
+          <ScalarProperty Name="UAG_CFDI_IMPORTE" ColumnName="UAG_CFDI_IMPORTE" />
+          <ScalarProperty Name="UAG_CFDI_DESCUENTO" ColumnName="UAG_CFDI_DESCUENTO" />
+          <ScalarProperty Name="UAG_CFDI_CANTIDAD" ColumnName="UAG_CFDI_CANTIDAD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UAG_CFDI_HDR">
+      <EntityTypeMapping TypeName="PRNFACT.UAG_CFDI_HDR">
+        <MappingFragment StoreEntitySet="UAG_CFDI_HDR">
+          <ScalarProperty Name="SOURCE" ColumnName="SOURCE" />
+          <ScalarProperty Name="UAG_CFDI_UUID" ColumnName="UAG_CFDI_UUID" />
+          <ScalarProperty Name="UAG_CFDI_FOLIO" ColumnName="UAG_CFDI_FOLIO" />
+          <ScalarProperty Name="UAG_CFDI_FECHA" ColumnName="UAG_CFDI_FECHA" />
+          <ScalarProperty Name="UAG_CFDI_FORMAPAGO" ColumnName="UAG_CFDI_FORMAPAGO" />
+          <ScalarProperty Name="UAG_CFDI_METODOPAG" ColumnName="UAG_CFDI_METODOPAG" />
+          <ScalarProperty Name="UAG_CFDI_MONEDA" ColumnName="UAG_CFDI_MONEDA" />
+          <ScalarProperty Name="UAG_CFDI_SERIE" ColumnName="UAG_CFDI_SERIE" />
+          <ScalarProperty Name="UAG_CFDI_SUBTOTAL" ColumnName="UAG_CFDI_SUBTOTAL" />
+          <ScalarProperty Name="UAG_CFDI_TIPOCOMPR" ColumnName="UAG_CFDI_TIPOCOMPR" />
+          <ScalarProperty Name="UAG_CFDI_TOTAL" ColumnName="UAG_CFDI_TOTAL" />
+          <ScalarProperty Name="UAG_CFDI_VERSION" ColumnName="UAG_CFDI_VERSION" />
+          <ScalarProperty Name="UAG_CFDI_EMISOR" ColumnName="UAG_CFDI_EMISOR" />
+          <ScalarProperty Name="UAG_CFDI_EMISORRFC" ColumnName="UAG_CFDI_EMISORRFC" />
+          <ScalarProperty Name="UAG_CFDI_EMISORREG" ColumnName="UAG_CFDI_EMISORREG" />
+          <ScalarProperty Name="UAG_CFDI_RECEPTOR" ColumnName="UAG_CFDI_RECEPTOR" />
+          <ScalarProperty Name="UAG_CFDI_RECEPTRFC" ColumnName="UAG_CFDI_RECEPTRFC" />
+          <ScalarProperty Name="UAG_CFDI_USO" ColumnName="UAG_CFDI_USO" />
+          <ScalarProperty Name="UAG_CFDI_TIPOCAMBIO" ColumnName="UAG_CFDI_TIPOCAMBIO" />
+          <ScalarProperty Name="UAG_CFDI_DOC" ColumnName="UAG_CFDI_DOC" />
+          <ScalarProperty Name="UAG_CFDI_TOTAL_LINEAS" ColumnName="UAG_CFDI_TOTAL_LINEAS" />
+          <ScalarProperty Name="UAG_CFDI_LINEAS_REL" ColumnName="UAG_CFDI_LINEAS_REL" />
+          <ScalarProperty Name="UAG_CFDI_IVA" ColumnName="UAG_CFDI_IVA" />
+          <ScalarProperty Name="UAG_CFDI_FOLIOPROV" ColumnName="UAG_CFDI_FOLIOPROV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UAG_CFDI_IM_LOC">
+      <EntityTypeMapping TypeName="PRNFACT.UAG_CFDI_IM_LOC">
+        <MappingFragment StoreEntitySet="UAG_CFDI_IM_LOC">
+          <ScalarProperty Name="UAG_CFDI_UUID" ColumnName="UAG_CFDI_UUID" />
+          <ScalarProperty Name="UAG_CFDI_NUM_LINEA" ColumnName="UAG_CFDI_NUM_LINEA" />
+          <ScalarProperty Name="UAG_CFDI_TIPOIMP" ColumnName="UAG_CFDI_TIPOIMP" />
+          <ScalarProperty Name="UAG_CFDI_IMP_LOC" ColumnName="UAG_CFDI_IMP_LOC" />
+          <ScalarProperty Name="UAG_CFDI_TASACUOTA" ColumnName="UAG_CFDI_TASACUOTA" />
+          <ScalarProperty Name="UAG_CFDI_IMPORTE" ColumnName="UAG_CFDI_IMPORTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UAG_CFDI_LN">
+      <EntityTypeMapping TypeName="PRNFACT.UAG_CFDI_LN">
+        <MappingFragment StoreEntitySet="UAG_CFDI_LN">
+          <ScalarProperty Name="UAG_CFDI_UUID" ColumnName="UAG_CFDI_UUID" />
+          <ScalarProperty Name="UAG_CFDI_NUM_LINEA" ColumnName="UAG_CFDI_NUM_LINEA" />
+          <ScalarProperty Name="UAG_CFDI_PRODSERV" ColumnName="UAG_CFDI_PRODSERV" />
+          <ScalarProperty Name="UAG_CFDI_CLVUNIDAD" ColumnName="UAG_CFDI_CLVUNIDAD" />
+          <ScalarProperty Name="UAG_CFDI_DESCR" ColumnName="UAG_CFDI_DESCR" />
+          <ScalarProperty Name="UAG_CFDI_VALORUNIT" ColumnName="UAG_CFDI_VALORUNIT" />
+          <ScalarProperty Name="UAG_CFDI_IMPORTE" ColumnName="UAG_CFDI_IMPORTE" />
+          <ScalarProperty Name="UAG_CFDI_DESCUENTO" ColumnName="UAG_CFDI_DESCUENTO" />
+          <ScalarProperty Name="UAG_CFDI_CANTIDAD" ColumnName="UAG_CFDI_CANTIDAD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UAG_CFDI_LN_IMP">
+      <EntityTypeMapping TypeName="PRNFACT.UAG_CFDI_LN_IMP">
+        <MappingFragment StoreEntitySet="UAG_CFDI_LN_IMP">
+          <ScalarProperty Name="UAG_CFDI_UUID" ColumnName="UAG_CFDI_UUID" />
+          <ScalarProperty Name="UAG_CFDI_NUM_LINEA" ColumnName="UAG_CFDI_NUM_LINEA" />
+          <ScalarProperty Name="UAG_CFDI_NUMLN_IMP" ColumnName="UAG_CFDI_NUMLN_IMP" />
+          <ScalarProperty Name="UAG_CFDI_TIPOIMP" ColumnName="UAG_CFDI_TIPOIMP" />
+          <ScalarProperty Name="UAG_CFDI_BASE" ColumnName="UAG_CFDI_BASE" />
+          <ScalarProperty Name="UAG_CFDI_IMPUESTO" ColumnName="UAG_CFDI_IMPUESTO" />
+          <ScalarProperty Name="UAG_CFDI_TIPOFACTO" ColumnName="UAG_CFDI_TIPOFACTO" />
+          <ScalarProperty Name="UAG_CFDI_TASACUOTA" ColumnName="UAG_CFDI_TASACUOTA" />
+          <ScalarProperty Name="UAG_CFDI_IMPORTE" ColumnName="UAG_CFDI_IMPORTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UAG_COMPAG_HDR">
+      <EntityTypeMapping TypeName="PRNFACT.UAG_COMPAG_HDR">
+        <MappingFragment StoreEntitySet="UAG_COMPAG_HDR">
+          <ScalarProperty Name="SOURCE" ColumnName="SOURCE" />
+          <ScalarProperty Name="UAG_COMPAG_UUID" ColumnName="UAG_COMPAG_UUID" />
+          <ScalarProperty Name="UAG_COMPAG_FOLIO" ColumnName="UAG_COMPAG_FOLIO" />
+          <ScalarProperty Name="UAG_COMPAG_FECHA" ColumnName="UAG_COMPAG_FECHA" />
+          <ScalarProperty Name="UAG_COMPAG_MONEDA" ColumnName="UAG_COMPAG_MONEDA" />
+          <ScalarProperty Name="UAG_COMPAG_SERIE" ColumnName="UAG_COMPAG_SERIE" />
+          <ScalarProperty Name="UAG_COMPAG_SUBTOTAL" ColumnName="UAG_COMPAG_SUBTOTAL" />
+          <ScalarProperty Name="UAG_COMPAG_TIPOCOMPR" ColumnName="UAG_COMPAG_TIPOCOMPR" />
+          <ScalarProperty Name="UAG_COMPAG_TOTAL" ColumnName="UAG_COMPAG_TOTAL" />
+          <ScalarProperty Name="UAG_COMPAG_VERSION" ColumnName="UAG_COMPAG_VERSION" />
+          <ScalarProperty Name="UAG_COMPAG_EMISOR" ColumnName="UAG_COMPAG_EMISOR" />
+          <ScalarProperty Name="UAG_COMPAG_EMISORRFC" ColumnName="UAG_COMPAG_EMISORRFC" />
+          <ScalarProperty Name="UAG_COMPAG_EMISORREG" ColumnName="UAG_COMPAG_EMISORREG" />
+          <ScalarProperty Name="UAG_COMPAG_RECEPTOR" ColumnName="UAG_COMPAG_RECEPTOR" />
+          <ScalarProperty Name="UAG_COMPAG_RECEPTORRFC" ColumnName="UAG_COMPAG_RECEPTORRFC" />
+          <ScalarProperty Name="UAG_COMPAG_USO" ColumnName="UAG_COMPAG_USO" />
+          <ScalarProperty Name="UAG_COMPAG_DOC" ColumnName="UAG_COMPAG_DOC" />
+          <ScalarProperty Name="UAG_COMPAG_FOLIOPROV" ColumnName="UAG_COMPAG_FOLIOPROV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UAG_COMPAG_LN">
+      <EntityTypeMapping TypeName="PRNFACT.UAG_COMPAG_LN">
+        <MappingFragment StoreEntitySet="UAG_COMPAG_LN">
+          <ScalarProperty Name="UAG_COMPAG_UUID" ColumnName="UAG_COMPAG_UUID" />
+          <ScalarProperty Name="UAG_COMPAG_NUM_LINEA" ColumnName="UAG_COMPAG_NUM_LINEA" />
+          <ScalarProperty Name="UAG_COMPAG_IMPORTE" ColumnName="UAG_COMPAG_IMPORTE" />
+          <ScalarProperty Name="UAG_COMPAG_VALORUNIT" ColumnName="UAG_COMPAG_VALORUNIT" />
+          <ScalarProperty Name="UAG_COMPAG_DESCR" ColumnName="UAG_COMPAG_DESCR" />
+          <ScalarProperty Name="UAG_COMPAG_CLVUNIDAD" ColumnName="UAG_COMPAG_CLVUNIDAD" />
+          <ScalarProperty Name="UAG_COMPAG_PRODSERV" ColumnName="UAG_COMPAG_PRODSERV" />
+          <ScalarProperty Name="UAG_COMPAG_QTY" ColumnName="UAG_COMPAG_QTY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UAG_COMPAG_PYMNT">
+      <EntityTypeMapping TypeName="PRNFACT.UAG_COMPAG_PYMNT">
+        <MappingFragment StoreEntitySet="UAG_COMPAG_PYMNT">
+          <ScalarProperty Name="UAG_COMPAG_UUID" ColumnName="UAG_COMPAG_UUID" />
+          <ScalarProperty Name="UAG_COMPAG_LN" ColumnName="UAG_COMPAG_LN" />
+          <ScalarProperty Name="UAG_COMPAG_CTABEN" ColumnName="UAG_COMPAG_CTABEN" />
+          <ScalarProperty Name="UAG_COMPAG_CTABENRFC" ColumnName="UAG_COMPAG_CTABENRFC" />
+          <ScalarProperty Name="UAG_COMPAG_CTAORD" ColumnName="UAG_COMPAG_CTAORD" />
+          <ScalarProperty Name="UAG_COMPAG_CTAORDRFC" ColumnName="UAG_COMPAG_CTAORDRFC" />
+          <ScalarProperty Name="UAG_COMPAG_NUMOPR" ColumnName="UAG_COMPAG_NUMOPR" />
+          <ScalarProperty Name="UAG_COMPAG_MONTO" ColumnName="UAG_COMPAG_MONTO" />
+          <ScalarProperty Name="UAG_COMPAG_MONEDA" ColumnName="UAG_COMPAG_MONEDA" />
+          <ScalarProperty Name="UAG_COMPAG_FORMAPAG" ColumnName="UAG_COMPAG_FORMAPAG" />
+          <ScalarProperty Name="UAG_COMPAG_FECHAPAG" ColumnName="UAG_COMPAG_FECHAPAG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UAG_COMPAG_PYMNT_DOCREL">
+      <EntityTypeMapping TypeName="PRNFACT.UAG_COMPAG_PYMNT_DOCREL">
+        <MappingFragment StoreEntitySet="UAG_COMPAG_PYMNT_DOCREL">
+          <ScalarProperty Name="UAG_COMPAG_UUID" ColumnName="UAG_COMPAG_UUID" />
+          <ScalarProperty Name="UAG_COMPAG_LN" ColumnName="UAG_COMPAG_LN" />
+          <ScalarProperty Name="UAG_COMPAG_DOC_LN" ColumnName="UAG_COMPAG_DOC_LN" />
+          <ScalarProperty Name="UAG_COMPAG_FOLIO" ColumnName="UAG_COMPAG_FOLIO" />
+          <ScalarProperty Name="UAG_COMPAG_SERIE" ColumnName="UAG_COMPAG_SERIE" />
+          <ScalarProperty Name="UAG_COMPAG_SALINSO" ColumnName="UAG_COMPAG_SALINSO" />
+          <ScalarProperty Name="UAG_COMPAG_IMPPAG" ColumnName="UAG_COMPAG_IMPPAG" />
+          <ScalarProperty Name="UAG_COMPAG_SALANTE" ColumnName="UAG_COMPAG_SALANTE" />
+          <ScalarProperty Name="UAG_COMPAG_NUMPAR" ColumnName="UAG_COMPAG_NUMPAR" />
+          <ScalarProperty Name="UAG_COMPAG_METPAG" ColumnName="UAG_COMPAG_METPAG" />
+          <ScalarProperty Name="UAG_COMPAG_MONEDA" ColumnName="UAG_COMPAG_MONEDA" />
+          <ScalarProperty Name="UAG_COMPAG_DOCREL" ColumnName="UAG_COMPAG_DOCREL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UAG_LOG">
+      <EntityTypeMapping TypeName="PRNFACT.UAG_LOG">
+        <MappingFragment StoreEntitySet="UAG_LOG">
+          <ScalarProperty Name="UAG_LOG_USER" ColumnName="UAG_LOG_USER" />
+          <ScalarProperty Name="UAG_LOG_ACT" ColumnName="UAG_LOG_ACT" />
+          <ScalarProperty Name="UAG_LOG_URL" ColumnName="UAG_LOG_URL" />
+          <ScalarProperty Name="UAG_LOG_FEC" ColumnName="UAG_LOG_FEC" />
+          <ScalarProperty Name="UAG_LOG_IP" ColumnName="UAG_LOG_IP" />
+          <ScalarProperty Name="LOG_ID" ColumnName="LOG_ID" />
+          <ScalarProperty Name="UAG_LOG_DESCR" ColumnName="UAG_LOG_DESCR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UAG_MESSAGES_SOLUCIONFACTIBLE">
+      <EntityTypeMapping TypeName="PRNFACT.UAG_MESSAGES_SOLUCIONFACTIBLE">
+        <MappingFragment StoreEntitySet="UAG_MESSAGES_SOLUCIONFACTIBLE">
+          <ScalarProperty Name="ID_MESSAGE" ColumnName="ID_MESSAGE" />
+          <ScalarProperty Name="MESSAGE" ColumnName="MESSAGE" />
+          <ScalarProperty Name="MODIFYDATE" ColumnName="MODIFYDATE" />
+          <ScalarProperty Name="USERMODIFY" ColumnName="USERMODIFY" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UAG_UUID_LOG">
+      <EntityTypeMapping TypeName="PRNFACT.UAG_UUID_LOG">
+        <MappingFragment StoreEntitySet="UAG_UUID_LOG">
+          <ScalarProperty Name="SOURCE" ColumnName="SOURCE" />
+          <ScalarProperty Name="UAG_CFDI_UUID" ColumnName="UAG_CFDI_UUID" />
+          <ScalarProperty Name="UAG_LOG_FEC" ColumnName="UAG_LOG_FEC" />
+          <ScalarProperty Name="UAG_LOG_ACCCION" ColumnName="UAG_LOG_ACCCION" />
+          <ScalarProperty Name="UAG_LOG_DESCR" ColumnName="UAG_LOG_DESCR" />
+          <ScalarProperty Name="UAG_LOG_IP" ColumnName="UAG_LOG_IP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

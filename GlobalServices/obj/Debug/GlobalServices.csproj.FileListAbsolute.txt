@@ -1,0 +1,53 @@
+C:\Users\e570327\Documents\01-02-2018\FacturacionProv2\GlobalServices\bin\Debug\GlobalServices.dll
+C:\Users\e570327\Documents\01-02-2018\FacturacionProv2\GlobalServices\bin\Debug\GlobalServices.pdb
+C:\Users\e570327\Documents\01-02-2018\FacturacionProv2\GlobalServices\obj\Debug\GlobalServices.csprojResolveAssemblyReference.cache
+C:\Users\e570327\Documents\01-02-2018\FacturacionProv2\GlobalServices\obj\Debug\GlobalServices.dll
+C:\Users\e570327\Documents\01-02-2018\FacturacionProv2\GlobalServices\obj\Debug\GlobalServices.pdb
+D:\FacturacionProv2\GlobalServices\bin\Debug\GlobalServices.dll
+D:\FacturacionProv2\GlobalServices\bin\Debug\GlobalServices.pdb
+D:\FacturacionProv2\GlobalServices\obj\Debug\GlobalServices.dll
+D:\FacturacionProv2\GlobalServices\obj\Debug\GlobalServices.pdb
+D:\Proveedores2.1\uag-proveedores-2.0\GlobalServices\bin\Debug\GlobalServices.dll
+D:\Proveedores2.1\uag-proveedores-2.0\GlobalServices\bin\Debug\GlobalServices.pdb
+D:\Proveedores2.1\uag-proveedores-2.0\GlobalServices\obj\Debug\GlobalServices.dll
+D:\Proveedores2.1\uag-proveedores-2.0\GlobalServices\obj\Debug\GlobalServices.pdb
+C:\Users\lalo\Documents\Visual Studio 2015\Projects\Proveedores2.0\GlobalServices\bin\Debug\GlobalServices.dll
+C:\Users\lalo\Documents\Visual Studio 2015\Projects\Proveedores2.0\GlobalServices\bin\Debug\GlobalServices.pdb
+C:\Users\lalo\Documents\Visual Studio 2015\Projects\Proveedores2.0\GlobalServices\obj\Debug\GlobalServices.csprojResolveAssemblyReference.cache
+C:\Users\lalo\Documents\Visual Studio 2015\Projects\Proveedores2.0\GlobalServices\obj\Debug\GlobalServices.dll
+C:\Users\lalo\Documents\Visual Studio 2015\Projects\Proveedores2.0\GlobalServices\obj\Debug\GlobalServices.pdb
+C:\Users\Acer\Source\Repos\Proveedores2.0\GlobalServices\bin\Debug\GlobalServices.dll
+C:\Users\Acer\Source\Repos\Proveedores2.0\GlobalServices\bin\Debug\GlobalServices.pdb
+C:\Users\Acer\Source\Repos\Proveedores2.0\GlobalServices\obj\Debug\GlobalServices.dll
+C:\Users\Acer\Source\Repos\Proveedores2.0\GlobalServices\obj\Debug\GlobalServices.pdb
+D:\Proveedores2.1\uag-proveedores-2.0_2\uag-proveedores-2.0\GlobalServices\bin\Debug\GlobalServices.dll
+D:\Proveedores2.1\uag-proveedores-2.0_2\uag-proveedores-2.0\GlobalServices\bin\Debug\GlobalServices.pdb
+D:\Proveedores2.1\uag-proveedores-2.0_2\uag-proveedores-2.0\GlobalServices\obj\Debug\GlobalServices.csprojResolveAssemblyReference.cache
+D:\Proveedores2.1\uag-proveedores-2.0_2\uag-proveedores-2.0\GlobalServices\obj\Debug\GlobalServices.dll
+D:\Proveedores2.1\uag-proveedores-2.0_2\uag-proveedores-2.0\GlobalServices\obj\Debug\GlobalServices.pdb
+C:\Users\Acer\Source\Repos\uag-proveedores-2.0\GlobalServices\bin\Debug\GlobalServices.dll
+C:\Users\Acer\Source\Repos\uag-proveedores-2.0\GlobalServices\bin\Debug\GlobalServices.pdb
+C:\Users\Acer\Source\Repos\uag-proveedores-2.0\GlobalServices\obj\Debug\GlobalServices.csprojResolveAssemblyReference.cache
+C:\Users\Acer\Source\Repos\uag-proveedores-2.0\GlobalServices\obj\Debug\GlobalServices.dll
+C:\Users\Acer\Source\Repos\uag-proveedores-2.0\GlobalServices\obj\Debug\GlobalServices.pdb
+C:\Users\Acer\Source\Repos\uag-proveedores-2-0\GlobalServices\bin\Debug\GlobalServices.dll
+C:\Users\Acer\Source\Repos\uag-proveedores-2-0\GlobalServices\bin\Debug\GlobalServices.pdb
+C:\Users\Acer\Source\Repos\uag-proveedores-2-0\GlobalServices\obj\Debug\GlobalServices.csprojResolveAssemblyReference.cache
+C:\Users\Acer\Source\Repos\uag-proveedores-2-0\GlobalServices\obj\Debug\GlobalServices.dll
+C:\Users\Acer\Source\Repos\uag-proveedores-2-0\GlobalServices\obj\Debug\GlobalServices.pdb
+C:\Kybel\Desarrollo Repo\UAGProveedores\GlobalServices\bin\Debug\GlobalServices.dll
+C:\Kybel\Desarrollo Repo\UAGProveedores\GlobalServices\bin\Debug\GlobalServices.pdb
+C:\Kybel\Desarrollo Repo\UAGProveedores\GlobalServices\obj\Debug\GlobalServices.dll
+C:\Kybel\Desarrollo Repo\UAGProveedores\GlobalServices\obj\Debug\GlobalServices.pdb
+C:\Kybel\Desarrollo Repo\UAGProveedores\GlobalServices\obj\Debug\GlobalServices.csprojResolveAssemblyReference.cache
+C:\Users\lalog\Source\Repos\uag-proveedores-2-02Hugo\GlobalServices\bin\Debug\GlobalServices.dll
+C:\Users\lalog\Source\Repos\uag-proveedores-2-02Hugo\GlobalServices\bin\Debug\GlobalServices.pdb
+C:\Users\lalog\Source\Repos\uag-proveedores-2-02Hugo\GlobalServices\obj\Debug\GlobalServices.dll
+C:\Users\lalog\Source\Repos\uag-proveedores-2-02Hugo\GlobalServices\obj\Debug\GlobalServices.pdb
+C:\Users\lalog\Source\Repos\uag-proveedores-2-02Hugo\GlobalServices\obj\Debug\GlobalServices.csprojResolveAssemblyReference.cache
+C:\Portales Web UAG\Proveedores2.0\GlobalServices\bin\Debug\GlobalServices.dll
+C:\Portales Web UAG\Proveedores2.0\GlobalServices\bin\Debug\GlobalServices.pdb
+C:\Portales Web UAG\Proveedores2.0\GlobalServices\obj\Debug\GlobalServices.dll
+C:\Portales Web UAG\Proveedores2.0\GlobalServices\obj\Debug\GlobalServices.pdb
+C:\Portales Web UAG\Proveedores2.0\GlobalServices\obj\Debug\GlobalServices.csprojAssemblyReference.cache
+C:\Portales Web UAG\Proveedores2.0\GlobalServices\obj\Debug\GlobalServices.csproj.CoreCompileInputs.cache

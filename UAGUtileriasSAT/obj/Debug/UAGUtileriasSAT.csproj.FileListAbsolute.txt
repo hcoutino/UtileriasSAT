@@ -1,0 +1,15 @@
+C:\PortalesWebHcoutino\UAGUtileriasSAT\UAGUtileriasSAT\obj\Debug\UAGUtileriasSAT.csprojAssemblyReference.cache
+C:\PortalesWebHcoutino\UAGUtileriasSAT\UAGUtileriasSAT\obj\Debug\UAGUtileriasSAT.csproj.CoreCompileInputs.cache
+C:\PortalesWebHcoutino\UAGUtileriasSAT\UAGUtileriasSAT\bin\UAGUtileriasSAT.dll.config
+C:\PortalesWebHcoutino\UAGUtileriasSAT\UAGUtileriasSAT\bin\UAGUtileriasSAT.dll
+C:\PortalesWebHcoutino\UAGUtileriasSAT\UAGUtileriasSAT\bin\UAGUtileriasSAT.pdb
+C:\PortalesWebHcoutino\UAGUtileriasSAT\UAGUtileriasSAT\bin\EntityFramework.dll
+C:\PortalesWebHcoutino\UAGUtileriasSAT\UAGUtileriasSAT\bin\EntityFramework.SqlServer.dll
+C:\PortalesWebHcoutino\UAGUtileriasSAT\UAGUtileriasSAT\bin\Newtonsoft.Json.dll
+C:\PortalesWebHcoutino\UAGUtileriasSAT\UAGUtileriasSAT\bin\Oracle.ManagedDataAccess.dll
+C:\PortalesWebHcoutino\UAGUtileriasSAT\UAGUtileriasSAT\bin\EntityFramework.xml
+C:\PortalesWebHcoutino\UAGUtileriasSAT\UAGUtileriasSAT\bin\EntityFramework.SqlServer.xml
+C:\PortalesWebHcoutino\UAGUtileriasSAT\UAGUtileriasSAT\bin\Newtonsoft.Json.xml
+C:\PortalesWebHcoutino\UAGUtileriasSAT\UAGUtileriasSAT\obj\Debug\UAGUtileriasSAT.csproj.CopyComplete
+C:\PortalesWebHcoutino\UAGUtileriasSAT\UAGUtileriasSAT\obj\Debug\UAGUtileriasSAT.dll
+C:\PortalesWebHcoutino\UAGUtileriasSAT\UAGUtileriasSAT\obj\Debug\UAGUtileriasSAT.pdb

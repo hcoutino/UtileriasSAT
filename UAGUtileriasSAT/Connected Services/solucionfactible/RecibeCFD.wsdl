@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ax210="http://faults.ws.recepcion.cfd.solucionfactible.com/xsd" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ax213="http://ws.recepcion.cfd.solucionfactible.com/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns="http://ws.recepcion.cfd.solucionfactible.com" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns1="http://org.apache.axis2/xsd" targetNamespace="http://ws.recepcion.cfd.solucionfactible.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>RecibeCFD</wsdl:documentation>
+  <wsdl:types>
+    <xs:schema xmlns:ax211="http://ws.recepcion.cfd.solucionfactible.com" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://faults.ws.recepcion.cfd.solucionfactible.com/xsd">
+      <xs:import namespace="http://ws.recepcion.cfd.solucionfactible.com" />
+      <xs:complexType name="SFERPApplicationError">
+        <xs:complexContent mixed="false">
+          <xs:extension base="ax211:Exception">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema xmlns:ax214="http://ws.recepcion.cfd.solucionfactible.com/xsd" xmlns:ax212="http://faults.ws.recepcion.cfd.solucionfactible.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ws.recepcion.cfd.solucionfactible.com">
+      <xs:import namespace="http://faults.ws.recepcion.cfd.solucionfactible.com/xsd" />
+      <xs:import namespace="http://ws.recepcion.cfd.solucionfactible.com/xsd" />
+      <xs:complexType name="Exception">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Exception" nillable="true" type="xs:anyType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="SFERPApplicationError">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SFERPApplicationError" nillable="true" type="ax212:SFERPApplicationError" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="recibeCFDCustom">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cfd" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="nombreArchivo" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="nombreBuzon" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="camposPersonalizados" nillable="true" type="ax214:CampoPersonalizado" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="recibeCFDCustomResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax214:EntregaCustom" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="recibeCFDEnBuzon">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cfd" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="nombreArchivo" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="nombreBuzon" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="camposPersonalizados" nillable="true" type="ax214:CampoPersonalizado" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="recibeCFDEnBuzonResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax214:Entrega" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="rechazarAddendaCFD">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="rfcEmisor" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="folio" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="serie" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="uuid" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="mensaje" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="correo" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="rechazarAddendaCFDResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax214:Entrega" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="consultar">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="parametrosConsulta" nillable="true" type="ax214:ParametrosConsulta" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="consultarResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax214:RespuestaConsulta" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="recibeCFD">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cfd" nillable="true" type="xs:base64Binary" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="recibeCFDResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax214:Entrega" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="rechazarCFD">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="rfcEmisor" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="folio" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="serie" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="uuid" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="mensaje" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="correo" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="rechazarCFDResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax214:Entrega" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="obtenerPDF">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="rfcEmisor" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="folio" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="serie" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="uuid" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="ridDiseno" type="xs:long" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="obtenerPDFResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax214:RespuestaPDF" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ws.recepcion.cfd.solucionfactible.com/xsd">
+      <xs:complexType name="CampoPersonalizado">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="valor" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Entrega">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="acuse" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="cfdiId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="mensaje" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="status" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="EntregaCustom">
+        <xs:complexContent mixed="false">
+          <xs:extension base="ax213:Entrega">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="customValuesReturn" nillable="true" type="ax213:CampoPersonalizado" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="ParametrosConsulta">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="buzon" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="excluyeCancelados" type="xs:boolean" />
+          <xs:element minOccurs="0" name="excluyeNoValidos" type="xs:boolean" />
+          <xs:element minOccurs="0" name="excluyeRechazados" type="xs:boolean" />
+          <xs:element minOccurs="0" name="fechaEmisionFin" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="fechaEmisionInicio" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="fechaRecepcionFin" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="fechaRecepcionInicio" nillable="true" type="xs:date" />
+          <xs:element minOccurs="0" name="folio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="limit" type="xs:int" />
+          <xs:element minOccurs="0" name="offset" type="xs:int" />
+          <xs:element minOccurs="0" name="orderBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="rfcEmisor" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="rfcReceptor" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="serie" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RespuestaConsulta">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="comprobantes" nillable="true" type="ax213:ResumenCFD" />
+          <xs:element minOccurs="0" name="max" type="xs:int" />
+          <xs:element minOccurs="0" name="mensaje" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="status" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ResumenCFD">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="buzon" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="cancelado" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="fechaEmision" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="fechaRecepcion" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="folio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="moneda" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="monedaTipoCambio" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="nombreEmisor" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="rechazado" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="rfcEmisor" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="rfcReceptor" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="serie" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="subtotal" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="tipoComprobante" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="total" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="uuid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="valido" nillable="true" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RespuestaPDF">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="mensaje" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="resultados" nillable="true" type="ax213:RepresentacionImpresa" />
+          <xs:element minOccurs="0" name="status" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RepresentacionImpresa">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="fechaEmision" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="fechaRecepcion" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="folio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="nombreArchivo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="pdf" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="serie" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="uuid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="valid" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="recibeCFDCustomRequest">
+    <wsdl:part name="parameters" element="ns:recibeCFDCustom" />
+  </wsdl:message>
+  <wsdl:message name="recibeCFDCustomResponse">
+    <wsdl:part name="parameters" element="ns:recibeCFDCustomResponse" />
+  </wsdl:message>
+  <wsdl:message name="SFERPApplicationError">
+    <wsdl:part name="parameters" element="ns:SFERPApplicationError" />
+  </wsdl:message>
+  <wsdl:message name="obtenerPDFRequest">
+    <wsdl:part name="parameters" element="ns:obtenerPDF" />
+  </wsdl:message>
+  <wsdl:message name="obtenerPDFResponse">
+    <wsdl:part name="parameters" element="ns:obtenerPDFResponse" />
+  </wsdl:message>
+  <wsdl:message name="recibeCFDEnBuzonRequest">
+    <wsdl:part name="parameters" element="ns:recibeCFDEnBuzon" />
+  </wsdl:message>
+  <wsdl:message name="recibeCFDEnBuzonResponse">
+    <wsdl:part name="parameters" element="ns:recibeCFDEnBuzonResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarRequest">
+    <wsdl:part name="parameters" element="ns:consultar" />
+  </wsdl:message>
+  <wsdl:message name="consultarResponse">
+    <wsdl:part name="parameters" element="ns:consultarResponse" />
+  </wsdl:message>
+  <wsdl:message name="rechazarAddendaCFDRequest">
+    <wsdl:part name="parameters" element="ns:rechazarAddendaCFD" />
+  </wsdl:message>
+  <wsdl:message name="rechazarAddendaCFDResponse">
+    <wsdl:part name="parameters" element="ns:rechazarAddendaCFDResponse" />
+  </wsdl:message>
+  <wsdl:message name="rechazarCFDRequest">
+    <wsdl:part name="parameters" element="ns:rechazarCFD" />
+  </wsdl:message>
+  <wsdl:message name="rechazarCFDResponse">
+    <wsdl:part name="parameters" element="ns:rechazarCFDResponse" />
+  </wsdl:message>
+  <wsdl:message name="recibeCFDRequest">
+    <wsdl:part name="parameters" element="ns:recibeCFD" />
+  </wsdl:message>
+  <wsdl:message name="recibeCFDResponse">
+    <wsdl:part name="parameters" element="ns:recibeCFDResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RecibeCFDPortType">
+    <wsdl:operation name="recibeCFDCustom">
+      <wsdl:input wsaw:Action="urn:recibeCFDCustom" message="ns:recibeCFDCustomRequest" />
+      <wsdl:output wsaw:Action="urn:recibeCFDCustomResponse" message="ns:recibeCFDCustomResponse" />
+      <wsdl:fault wsaw:Action="urn:recibeCFDCustomSFERPApplicationError" name="SFERPApplicationError" message="ns:SFERPApplicationError" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerPDF">
+      <wsdl:input wsaw:Action="urn:obtenerPDF" message="ns:obtenerPDFRequest" />
+      <wsdl:output wsaw:Action="urn:obtenerPDFResponse" message="ns:obtenerPDFResponse" />
+      <wsdl:fault wsaw:Action="urn:obtenerPDFSFERPApplicationError" name="SFERPApplicationError" message="ns:SFERPApplicationError" />
+    </wsdl:operation>
+    <wsdl:operation name="recibeCFDEnBuzon">
+      <wsdl:input wsaw:Action="urn:recibeCFDEnBuzon" message="ns:recibeCFDEnBuzonRequest" />
+      <wsdl:output wsaw:Action="urn:recibeCFDEnBuzonResponse" message="ns:recibeCFDEnBuzonResponse" />
+      <wsdl:fault wsaw:Action="urn:recibeCFDEnBuzonSFERPApplicationError" name="SFERPApplicationError" message="ns:SFERPApplicationError" />
+    </wsdl:operation>
+    <wsdl:operation name="consultar">
+      <wsdl:input wsaw:Action="urn:consultar" message="ns:consultarRequest" />
+      <wsdl:output wsaw:Action="urn:consultarResponse" message="ns:consultarResponse" />
+      <wsdl:fault wsaw:Action="urn:consultarSFERPApplicationError" name="SFERPApplicationError" message="ns:SFERPApplicationError" />
+    </wsdl:operation>
+    <wsdl:operation name="rechazarAddendaCFD">
+      <wsdl:input wsaw:Action="urn:rechazarAddendaCFD" message="ns:rechazarAddendaCFDRequest" />
+      <wsdl:output wsaw:Action="urn:rechazarAddendaCFDResponse" message="ns:rechazarAddendaCFDResponse" />
+      <wsdl:fault wsaw:Action="urn:rechazarAddendaCFDSFERPApplicationError" name="SFERPApplicationError" message="ns:SFERPApplicationError" />
+    </wsdl:operation>
+    <wsdl:operation name="rechazarCFD">
+      <wsdl:input wsaw:Action="urn:rechazarCFD" message="ns:rechazarCFDRequest" />
+      <wsdl:output wsaw:Action="urn:rechazarCFDResponse" message="ns:rechazarCFDResponse" />
+      <wsdl:fault wsaw:Action="urn:rechazarCFDSFERPApplicationError" name="SFERPApplicationError" message="ns:SFERPApplicationError" />
+    </wsdl:operation>
+    <wsdl:operation name="recibeCFD">
+      <wsdl:input wsaw:Action="urn:recibeCFD" message="ns:recibeCFDRequest" />
+      <wsdl:output wsaw:Action="urn:recibeCFDResponse" message="ns:recibeCFDResponse" />
+      <wsdl:fault wsaw:Action="urn:recibeCFDSFERPApplicationError" name="SFERPApplicationError" message="ns:SFERPApplicationError" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RecibeCFDSoap11Binding" type="ns:RecibeCFDPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="recibeCFDCustom">
+      <soap:operation soapAction="urn:recibeCFDCustom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SFERPApplicationError">
+        <soap:fault use="literal" name="SFERPApplicationError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerPDF">
+      <soap:operation soapAction="urn:obtenerPDF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SFERPApplicationError">
+        <soap:fault use="literal" name="SFERPApplicationError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="recibeCFDEnBuzon">
+      <soap:operation soapAction="urn:recibeCFDEnBuzon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SFERPApplicationError">
+        <soap:fault use="literal" name="SFERPApplicationError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultar">
+      <soap:operation soapAction="urn:consultar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SFERPApplicationError">
+        <soap:fault use="literal" name="SFERPApplicationError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="rechazarAddendaCFD">
+      <soap:operation soapAction="urn:rechazarAddendaCFD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SFERPApplicationError">
+        <soap:fault use="literal" name="SFERPApplicationError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="rechazarCFD">
+      <soap:operation soapAction="urn:rechazarCFD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SFERPApplicationError">
+        <soap:fault use="literal" name="SFERPApplicationError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="recibeCFD">
+      <soap:operation soapAction="urn:recibeCFD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SFERPApplicationError">
+        <soap:fault use="literal" name="SFERPApplicationError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RecibeCFDSoap12Binding" type="ns:RecibeCFDPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="recibeCFDCustom">
+      <soap12:operation soapAction="urn:recibeCFDCustom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SFERPApplicationError">
+        <soap12:fault use="literal" name="SFERPApplicationError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerPDF">
+      <soap12:operation soapAction="urn:obtenerPDF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SFERPApplicationError">
+        <soap12:fault use="literal" name="SFERPApplicationError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="recibeCFDEnBuzon">
+      <soap12:operation soapAction="urn:recibeCFDEnBuzon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SFERPApplicationError">
+        <soap12:fault use="literal" name="SFERPApplicationError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultar">
+      <soap12:operation soapAction="urn:consultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SFERPApplicationError">
+        <soap12:fault use="literal" name="SFERPApplicationError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="rechazarAddendaCFD">
+      <soap12:operation soapAction="urn:rechazarAddendaCFD" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SFERPApplicationError">
+        <soap12:fault use="literal" name="SFERPApplicationError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="rechazarCFD">
+      <soap12:operation soapAction="urn:rechazarCFD" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SFERPApplicationError">
+        <soap12:fault use="literal" name="SFERPApplicationError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="recibeCFD">
+      <soap12:operation soapAction="urn:recibeCFD" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SFERPApplicationError">
+        <soap12:fault use="literal" name="SFERPApplicationError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RecibeCFDHttpBinding" type="ns:RecibeCFDPortType">
+    <http:binding verb="POST" />
+    <wsdl:operation name="recibeCFDCustom">
+      <http:operation location="RecibeCFD/recibeCFDCustom" />
+      <wsdl:input>
+        <mime:content part="recibeCFDCustom" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="recibeCFDCustom" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerPDF">
+      <http:operation location="RecibeCFD/obtenerPDF" />
+      <wsdl:input>
+        <mime:content part="obtenerPDF" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="obtenerPDF" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="recibeCFDEnBuzon">
+      <http:operation location="RecibeCFD/recibeCFDEnBuzon" />
+      <wsdl:input>
+        <mime:content part="recibeCFDEnBuzon" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="recibeCFDEnBuzon" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultar">
+      <http:operation location="RecibeCFD/consultar" />
+      <wsdl:input>
+        <mime:content part="consultar" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="consultar" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="rechazarAddendaCFD">
+      <http:operation location="RecibeCFD/rechazarAddendaCFD" />
+      <wsdl:input>
+        <mime:content part="rechazarAddendaCFD" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="rechazarAddendaCFD" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="rechazarCFD">
+      <http:operation location="RecibeCFD/rechazarCFD" />
+      <wsdl:input>
+        <mime:content part="rechazarCFD" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="rechazarCFD" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="recibeCFD">
+      <http:operation location="RecibeCFD/recibeCFD" />
+      <wsdl:input>
+        <mime:content part="recibeCFD" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="recibeCFD" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RecibeCFD">
+    <wsdl:port name="RecibeCFDHttpsSoap11Endpoint" binding="ns:RecibeCFDSoap11Binding">
+      <soap:address location="https://solucionfactible.com/ws/services/RecibeCFD.RecibeCFDHttpsSoap11Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="RecibeCFDHttpsSoap12Endpoint" binding="ns:RecibeCFDSoap12Binding">
+      <soap12:address location="https://solucionfactible.com/ws/services/RecibeCFD.RecibeCFDHttpsSoap12Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="RecibeCFDHttpsEndpoint" binding="ns:RecibeCFDHttpBinding">
+      <http:address location="https://solucionfactible.com/ws/services/RecibeCFD.RecibeCFDHttpsEndpoint/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
