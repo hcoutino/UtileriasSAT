@@ -20,6 +20,7 @@ C:\Users\e562926\OneDrive - Universidad Autonoma de Guadalajara\PortalesWebHcout
 C:\Users\e562926\OneDrive - Universidad Autonoma de Guadalajara\PortalesWebHcoutino\UtileriasSAT\UAGUtileriasSAT\bin\EntityFramework.SqlServer.dll
 C:\Users\e562926\OneDrive - Universidad Autonoma de Guadalajara\PortalesWebHcoutino\UtileriasSAT\UAGUtileriasSAT\bin\Newtonsoft.Json.dll
 C:\Users\e562926\OneDrive - Universidad Autonoma de Guadalajara\PortalesWebHcoutino\UtileriasSAT\UAGUtileriasSAT\bin\Oracle.ManagedDataAccess.dll
+C:\Users\e562926\OneDrive - Universidad Autonoma de Guadalajara\PortalesWebHcoutino\UtileriasSAT\UAGUtileriasSAT\bin\Oracle.ManagedDataAccess.EntityFramework.dll
 C:\Users\e562926\OneDrive - Universidad Autonoma de Guadalajara\PortalesWebHcoutino\UtileriasSAT\UAGUtileriasSAT\bin\EntityFramework.xml
 C:\Users\e562926\OneDrive - Universidad Autonoma de Guadalajara\PortalesWebHcoutino\UtileriasSAT\UAGUtileriasSAT\bin\EntityFramework.SqlServer.xml
 C:\Users\e562926\OneDrive - Universidad Autonoma de Guadalajara\PortalesWebHcoutino\UtileriasSAT\UAGUtileriasSAT\bin\Newtonsoft.Json.xml
