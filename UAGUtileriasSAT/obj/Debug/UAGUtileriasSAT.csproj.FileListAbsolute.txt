@@ -13,6 +13,7 @@ C:\PortalesWebHcoutino\UAGUtileriasSAT\UAGUtileriasSAT\bin\Newtonsoft.Json.xml
 C:\PortalesWebHcoutino\UAGUtileriasSAT\UAGUtileriasSAT\obj\Debug\UAGUtileriasSAT.csproj.CopyComplete
 C:\PortalesWebHcoutino\UAGUtileriasSAT\UAGUtileriasSAT\obj\Debug\UAGUtileriasSAT.dll
 C:\PortalesWebHcoutino\UAGUtileriasSAT\UAGUtileriasSAT\obj\Debug\UAGUtileriasSAT.pdb
+C:\Users\e562926\OneDrive - Universidad Autonoma de Guadalajara\PortalesWebHcoutino\UtileriasSAT\UAGUtileriasSAT\bin\UAGUtileriasSAT.dll.config
 C:\Users\e562926\OneDrive - Universidad Autonoma de Guadalajara\PortalesWebHcoutino\UtileriasSAT\UAGUtileriasSAT\bin\UAGUtileriasSAT.dll
 C:\Users\e562926\OneDrive - Universidad Autonoma de Guadalajara\PortalesWebHcoutino\UtileriasSAT\UAGUtileriasSAT\bin\UAGUtileriasSAT.pdb
 C:\Users\e562926\OneDrive - Universidad Autonoma de Guadalajara\PortalesWebHcoutino\UtileriasSAT\UAGUtileriasSAT\bin\EntityFramework.dll
