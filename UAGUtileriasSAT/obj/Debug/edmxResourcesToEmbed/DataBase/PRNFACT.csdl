@@ -237,5 +237,20 @@
     <EntitySet Name="UAG_LOG" EntityType="Self.UAG_LOG" />
     <EntitySet Name="UAG_MESSAGES_SOLUCIONFACTIBLE" EntityType="Self.UAG_MESSAGES_SOLUCIONFACTIBLE" />
     <EntitySet Name="UAG_UUID_LOG" EntityType="Self.UAG_UUID_LOG" />
+    <EntitySet Name="UAG_VENDOR" EntityType="PRNFACT.UAG_VENDOR" />
   </EntityContainer>
+  <EntityType Name="UAG_VENDOR">
+    <Key>
+      <PropertyRef Name="VNDR_RFC" />
+    </Key>
+    <Property Name="VNDR_RFC" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="VNDR_LOCATION" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="VNDR_TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="VNDR_NAME" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="VENDOR_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VNDR_PASSWORD" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VNDR_CREATED_DTTM" Type="DateTime" Nullable="false" Precision="6" />
+    <Property Name="VNDR_LAST_MODIFIED_DATE" Type="DateTime" Nullable="false" Precision="6" />
+    <Property Name="VNDR_STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
 </Schema>

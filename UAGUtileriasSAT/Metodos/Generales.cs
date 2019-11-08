@@ -35,9 +35,8 @@ namespace UAGUtileriasSAT.Metodos
                 uuid = value;
             }
         }
-  
-        //Functions 
 
+        //Functions 
         public static bool ValidateExistenceXML(byte[] fileBytes)
         {
             bool flag = false;
@@ -99,7 +98,6 @@ namespace UAGUtileriasSAT.Metodos
             return flag;
 
         }
-
         public static bool ValidateExistenceXMLCompag(byte[] fileBytes)
         {
             bool flag = false;
@@ -159,7 +157,6 @@ namespace UAGUtileriasSAT.Metodos
             }
             return flag;
         }
-
         public string ValidateRFC(byte[] fileBytes, string rfc)
         {
             string flag = "";
@@ -229,7 +226,6 @@ namespace UAGUtileriasSAT.Metodos
             }
             return flag;
         }
-
         public static List<string> ValidateForm(byte[] fileBytes)
         {
             List<string> mensajes = new List<string>();
@@ -317,7 +313,6 @@ namespace UAGUtileriasSAT.Metodos
 
             return mensajes;
         }
-
         public static bool ValidateMessage(string message)
         {
             List<UAG_MESSAGES_SOLUCIONFACTIBLE> messages = new List<UAG_MESSAGES_SOLUCIONFACTIBLE>();
@@ -333,6 +328,15 @@ namespace UAGUtileriasSAT.Metodos
                 }
             }
             return false;
+        }
+        public static string GetVndrPass(string strRfc)
+        {
+            PRNFACTEntities contextoVndr = new PRNFACTEntities();
+            string strPassEncrypt = string.Empty;
+            UAG_VENDOR UAGVNDR;
+            UAGVNDR = contextoVndr.UAG_VENDOR.Where(i => i.VNDR_RFC == strRfc).FirstOrDefault();
+            strPassEncrypt = UAGVNDR.VNDR_PASSWORD;
+            return strPassEncrypt;
         }
 
         //validar impuestos de traslado y retencion
@@ -372,7 +376,7 @@ namespace UAGUtileriasSAT.Metodos
                         {
                             cfdi.Load(streamReader);
                         }
-                        catch (Exception )
+                        catch (Exception)
                         {
                             flag = "Error Inesperado, Disculpe las molestias que esto le ocasione";
                         }
@@ -467,14 +471,13 @@ namespace UAGUtileriasSAT.Metodos
                     }
 
                 }
-                catch (Exception )
+                catch (Exception)
                 {
                     flag = "Error Inesperado, Disculpe las molestias que esto le ocasione";
                 }
             }
             return flag;
         }
-
         public static string getDescuentos(byte[] fileBytes, string UUID)
         {
             string flag = "";
@@ -498,7 +501,7 @@ namespace UAGUtileriasSAT.Metodos
                         XmlTextReader reader = new XmlTextReader(memoryStream);
                         cfdi.Load(reader);
                     }
-                    catch (Exception )
+                    catch (Exception)
                     {
                         memoryStream.Seek(0, System.IO.SeekOrigin.Begin);
                         encoding = "ISO-8859-1";
@@ -508,7 +511,7 @@ namespace UAGUtileriasSAT.Metodos
                         {
                             cfdi.Load(streamReader);
                         }
-                        catch (Exception )
+                        catch (Exception)
                         {
                             flag = "Error Inesperado, Disculpe las molestias que esto le ocasione";
                         }
@@ -554,14 +557,13 @@ namespace UAGUtileriasSAT.Metodos
                     }
 
                 }
-                catch (Exception )
+                catch (Exception)
                 {
                     flag = "Error Inesperado, Disculpe las molestias que esto le ocasione";
                 }
             }
             return flag;
         }
-
         public static string getSubtotal(byte[] fileBytes, string UUID)
         {
             string flag = "";
@@ -585,7 +587,7 @@ namespace UAGUtileriasSAT.Metodos
                         XmlTextReader reader = new XmlTextReader(memoryStream);
                         cfdi.Load(reader);
                     }
-                    catch (Exception )
+                    catch (Exception)
                     {
                         memoryStream.Seek(0, System.IO.SeekOrigin.Begin);
                         encoding = "ISO-8859-1";
@@ -595,7 +597,7 @@ namespace UAGUtileriasSAT.Metodos
                         {
                             cfdi.Load(streamReader);
                         }
-                        catch (Exception )
+                        catch (Exception)
                         {
                             flag = "Error Inesperado, Disculpe las molestias que esto le ocasione";
                         }
@@ -648,7 +650,6 @@ namespace UAGUtileriasSAT.Metodos
             }
             return flag;
         }
-
         public static string getTipoCambio(byte[] fileBytes, string UUID)
         {
             string flag = "";
@@ -716,7 +717,6 @@ namespace UAGUtileriasSAT.Metodos
             }
             return flag;
         }
-
         public static bool DeleteUUID(string uuid)
         {
             PRNFACTEntities contextoCfdi = new PRNFACTEntities();

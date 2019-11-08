@@ -43,6 +43,14 @@ namespace UAGUtileriasSAT
                RequestFormat = WebMessageFormat.Json,
                ResponseFormat = WebMessageFormat.Json)]
         SfJsonComplementos ProcesarComplementosREST(string carpeta);
+
+        /* Uag Portal Proveedores Get Password */
+        [WebInvoke(
+       Method = "GET",
+       BodyStyle = WebMessageBodyStyle.Wrapped,
+       RequestFormat = WebMessageFormat.Json,
+       ResponseFormat = WebMessageFormat.Json)]
+        JsonVndrPass GetVndrPassREST(string strRfc);
     }
 
 }

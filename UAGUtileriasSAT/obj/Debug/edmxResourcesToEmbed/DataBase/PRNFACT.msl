@@ -197,5 +197,20 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="UAG_VENDOR">
+      <EntityTypeMapping TypeName="PRNFACT.UAG_VENDOR">
+        <MappingFragment StoreEntitySet="UAG_VENDOR">
+          <ScalarProperty Name="VNDR_STATUS" ColumnName="VNDR_STATUS" />
+          <ScalarProperty Name="VNDR_LAST_MODIFIED_DATE" ColumnName="VNDR_LAST_MODIFIED_DATE" />
+          <ScalarProperty Name="VNDR_CREATED_DTTM" ColumnName="VNDR_CREATED_DTTM" />
+          <ScalarProperty Name="VNDR_PASSWORD" ColumnName="VNDR_PASSWORD" />
+          <ScalarProperty Name="VENDOR_ID" ColumnName="VENDOR_ID" />
+          <ScalarProperty Name="VNDR_NAME" ColumnName="VNDR_NAME" />
+          <ScalarProperty Name="VNDR_TYPE" ColumnName="VNDR_TYPE" />
+          <ScalarProperty Name="VNDR_LOCATION" ColumnName="VNDR_LOCATION" />
+          <ScalarProperty Name="VNDR_RFC" ColumnName="VNDR_RFC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

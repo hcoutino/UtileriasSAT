@@ -10,6 +10,7 @@ using UAGUtileriasSAT.DataBase;
 using UAGUtileriasSAT.Metodos;
 using UAGUtileriasSAT.FacturacionProv;
 using UAGUtileriasSAT.solucionfactible;
+using System.Web.Security;
 
 namespace UAGUtileriasSAT
 {
@@ -19,7 +20,6 @@ namespace UAGUtileriasSAT
     {
         //Public Variable
         public List<string> mensajes;
-
 
         // Procesar Invoice XML
         public SfJsonInvoiceXML ProcesarInvoiceXMLREST(string carpeta)
@@ -383,9 +383,31 @@ namespace UAGUtileriasSAT
         {
             return JsonConvert.SerializeObject(ProcesarComplementosREST(carpeta));
         }
+
+        //Get Vendor Pass
+        public JsonVndrPass GetVndrPassREST(string strRfc)
+        {
+            JsonVndrPass retorno = new JsonVndrPass();
+
+            string VndrPassEn = string.Empty;
+            VndrPassEn = Generales.GetVndrPass(strRfc);
+            retorno.RFC = strRfc;
+            retorno.VNDRPASS = biSafe.clsRijndael.Decrypt(VndrPassEn);
+            /*Return*/
+            return retorno;
+        }
+        public string GetVndrPass(string strRfc)
+        {
+            return JsonConvert.SerializeObject(GetVndrPassREST(strRfc));
+        }
+    }
+    /*Uag Rest Response */
+    public class JsonVndrPass
+    {
+        public string RFC { get; set; }
+        public string VNDRPASS { get; set; }
     }
     /*Solucion Factible Rest Response*/
-
     public class SfJsonEFOEDO
     {
         public string ResRFC { get; set; }
@@ -408,19 +430,16 @@ namespace UAGUtileriasSAT
         public string ResFFavoSat { get; set; }
         public string ResFFavoDof { get; set; }
     }
-
     public class RootObject
     {
         public Payload payload { get; set; }
     }
-
     public class Payload
     {
         public string rfc { get; set; }
         public string checkType { get; set; }
         public Resultado resultado { get; set; }
     }
-
     public class Resultado
     {
         public bool existente { get; set; }
@@ -441,7 +460,6 @@ namespace UAGUtileriasSAT
         public string numeroFechaFavorableDof { get; set; }
         public string fechaFavorableDof { get; set; }
     }
-
     public class SfJsonBuzonTributario
     {
         public string fechaEmitida { get; set; }
@@ -455,7 +473,6 @@ namespace UAGUtileriasSAT
         public string serie { get; set; }
         public string uuid { get; set; }
     }
-
     /*Invoice XML*/
     public class SfJsonInvoiceXML
     {
@@ -465,7 +482,6 @@ namespace UAGUtileriasSAT
         public int ConErrores { get; set; }
         public List<CfdiError> CfdiError { get; set; }
     }
-
     public class CfdiError
     {
         public string FileName { get; set; }
@@ -480,13 +496,11 @@ namespace UAGUtileriasSAT
         public int ConErrores { get; set; }
         public List<ComplementoError> ComplementoError { get; set; }
     }
-
     public class ComplementoError
     {
         public string FileName { get; set; }
         public string Detalle { get; set; }
     }
-
     public class OperacionComplemento
     {
         public string Archivo { get; set; }

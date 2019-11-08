@@ -224,6 +224,20 @@
     <Property Name="UAG_LOG_DESCR" Type="long" />
     <Property Name="UAG_LOG_IP" Type="varchar2" MaxLength="36" />
   </EntityType>
+  <EntityType Name="UAG_VENDOR">
+    <Key>
+      <PropertyRef Name="VNDR_RFC" />
+    </Key>
+    <Property Name="VNDR_RFC" Type="varchar2" MaxLength="13" Nullable="false" />
+    <Property Name="VNDR_LOCATION" Type="varchar2" MaxLength="30" />
+    <Property Name="VNDR_TYPE" Type="varchar2" MaxLength="1" />
+    <Property Name="VNDR_NAME" Type="varchar2" MaxLength="80" />
+    <Property Name="VENDOR_ID" Type="varchar2" MaxLength="10" />
+    <Property Name="VNDR_PASSWORD" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="VNDR_CREATED_DTTM" Type="timestamp" Precision="6" Nullable="false" />
+    <Property Name="VNDR_LAST_MODIFIED_DATE" Type="timestamp" Precision="6" Nullable="false" />
+    <Property Name="VNDR_STATUS" Type="varchar2" MaxLength="1" />
+  </EntityType>
   <EntityContainer Name="PRNFACTStoreContainer">
     <EntitySet Name="UAG_CFDI_CP_LN" EntityType="Self.UAG_CFDI_CP_LN" Schema="VNDRFACT" store:Type="Tables" />
     <EntitySet Name="UAG_CFDI_HDR" EntityType="Self.UAG_CFDI_HDR" Schema="VNDRFACT" store:Type="Tables" />
@@ -237,5 +251,6 @@
     <EntitySet Name="UAG_LOG" EntityType="Self.UAG_LOG" Schema="VNDRFACT" store:Type="Tables" />
     <EntitySet Name="UAG_MESSAGES_SOLUCIONFACTIBLE" EntityType="Self.UAG_MESSAGES_SOLUCIONFACTIBLE" Schema="VNDRFACT" store:Type="Tables" />
     <EntitySet Name="UAG_UUID_LOG" EntityType="Self.UAG_UUID_LOG" Schema="VNDRFACT" store:Type="Tables" />
+    <EntitySet Name="UAG_VENDOR" EntityType="Self.UAG_VENDOR" Schema="VNDRFACT" store:Type="Tables" />
   </EntityContainer>
 </Schema>

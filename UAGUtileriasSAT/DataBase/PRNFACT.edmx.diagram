@@ -17,6 +17,7 @@
         <EntityTypeShape EntityType="PRNFACT.UAG_LOG" Width="1.5" PointX="8.75" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="PRNFACT.UAG_MESSAGES_SOLUCIONFACTIBLE" Width="1.5" PointX="8.75" PointY="9.75" IsExpanded="true" />
         <EntityTypeShape EntityType="PRNFACT.UAG_UUID_LOG" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PRNFACT.UAG_VENDOR" Width="1.5" PointX="5.375" PointY="10.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -37,5 +37,6 @@ namespace UAGUtileriasSAT.DataBase
         public virtual DbSet<UAG_LOG> UAG_LOG { get; set; }
         public virtual DbSet<UAG_MESSAGES_SOLUCIONFACTIBLE> UAG_MESSAGES_SOLUCIONFACTIBLE { get; set; }
         public virtual DbSet<UAG_UUID_LOG> UAG_UUID_LOG { get; set; }
+        public virtual DbSet<UAG_VENDOR> UAG_VENDOR { get; set; }
     }
 }

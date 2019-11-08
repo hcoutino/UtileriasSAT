@@ -229,6 +229,20 @@
           <Property Name="UAG_LOG_DESCR" Type="long" />
           <Property Name="UAG_LOG_IP" Type="varchar2" MaxLength="36" />
         </EntityType>
+        <EntityType Name="UAG_VENDOR">
+          <Key>
+            <PropertyRef Name="VNDR_RFC" />
+          </Key>
+          <Property Name="VNDR_RFC" Type="varchar2" MaxLength="13" Nullable="false" />
+          <Property Name="VNDR_LOCATION" Type="varchar2" MaxLength="30" />
+          <Property Name="VNDR_TYPE" Type="varchar2" MaxLength="1" />
+          <Property Name="VNDR_NAME" Type="varchar2" MaxLength="80" />
+          <Property Name="VENDOR_ID" Type="varchar2" MaxLength="10" />
+          <Property Name="VNDR_PASSWORD" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="VNDR_CREATED_DTTM" Type="timestamp" Precision="6" Nullable="false" />
+          <Property Name="VNDR_LAST_MODIFIED_DATE" Type="timestamp" Precision="6" Nullable="false" />
+          <Property Name="VNDR_STATUS" Type="varchar2" MaxLength="1" />
+        </EntityType>
         <EntityContainer Name="PRNFACTStoreContainer">
           <EntitySet Name="UAG_CFDI_CP_LN" EntityType="Self.UAG_CFDI_CP_LN" Schema="VNDRFACT" store:Type="Tables" />
           <EntitySet Name="UAG_CFDI_HDR" EntityType="Self.UAG_CFDI_HDR" Schema="VNDRFACT" store:Type="Tables" />
@@ -242,6 +256,7 @@
           <EntitySet Name="UAG_LOG" EntityType="Self.UAG_LOG" Schema="VNDRFACT" store:Type="Tables" />
           <EntitySet Name="UAG_MESSAGES_SOLUCIONFACTIBLE" EntityType="Self.UAG_MESSAGES_SOLUCIONFACTIBLE" Schema="VNDRFACT" store:Type="Tables" />
           <EntitySet Name="UAG_UUID_LOG" EntityType="Self.UAG_UUID_LOG" Schema="VNDRFACT" store:Type="Tables" />
+          <EntitySet Name="UAG_VENDOR" EntityType="Self.UAG_VENDOR" Schema="VNDRFACT" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -484,7 +499,22 @@
           <EntitySet Name="UAG_LOG" EntityType="Self.UAG_LOG" />
           <EntitySet Name="UAG_MESSAGES_SOLUCIONFACTIBLE" EntityType="Self.UAG_MESSAGES_SOLUCIONFACTIBLE" />
           <EntitySet Name="UAG_UUID_LOG" EntityType="Self.UAG_UUID_LOG" />
+          <EntitySet Name="UAG_VENDOR" EntityType="PRNFACT.UAG_VENDOR" />
         </EntityContainer>
+        <EntityType Name="UAG_VENDOR">
+          <Key>
+            <PropertyRef Name="VNDR_RFC" />
+          </Key>
+          <Property Name="VNDR_RFC" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="VNDR_LOCATION" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="VNDR_TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="VNDR_NAME" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="VENDOR_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="VNDR_PASSWORD" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VNDR_CREATED_DTTM" Type="DateTime" Nullable="false" Precision="6" />
+          <Property Name="VNDR_LAST_MODIFIED_DATE" Type="DateTime" Nullable="false" Precision="6" />
+          <Property Name="VNDR_STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -684,6 +714,21 @@
                 <ScalarProperty Name="UAG_LOG_ACCCION" ColumnName="UAG_LOG_ACCCION" />
                 <ScalarProperty Name="UAG_LOG_DESCR" ColumnName="UAG_LOG_DESCR" />
                 <ScalarProperty Name="UAG_LOG_IP" ColumnName="UAG_LOG_IP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UAG_VENDOR">
+            <EntityTypeMapping TypeName="PRNFACT.UAG_VENDOR">
+              <MappingFragment StoreEntitySet="UAG_VENDOR">
+                <ScalarProperty Name="VNDR_STATUS" ColumnName="VNDR_STATUS" />
+                <ScalarProperty Name="VNDR_LAST_MODIFIED_DATE" ColumnName="VNDR_LAST_MODIFIED_DATE" />
+                <ScalarProperty Name="VNDR_CREATED_DTTM" ColumnName="VNDR_CREATED_DTTM" />
+                <ScalarProperty Name="VNDR_PASSWORD" ColumnName="VNDR_PASSWORD" />
+                <ScalarProperty Name="VENDOR_ID" ColumnName="VENDOR_ID" />
+                <ScalarProperty Name="VNDR_NAME" ColumnName="VNDR_NAME" />
+                <ScalarProperty Name="VNDR_TYPE" ColumnName="VNDR_TYPE" />
+                <ScalarProperty Name="VNDR_LOCATION" ColumnName="VNDR_LOCATION" />
+                <ScalarProperty Name="VNDR_RFC" ColumnName="VNDR_RFC" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
