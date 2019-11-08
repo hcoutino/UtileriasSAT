@@ -37,6 +37,7 @@ namespace UAGUtileriasSAT
             string uuid;
             decimal total;
 
+            string strerror = string.Empty;
             string strLocalUrl = ConfigurationManager.AppSettings["LocalUrl"];
             string strSolucionFactibleUsuario = ConfigurationManager.AppSettings["SolucionFactibleUsuario"];
             string strSolucionFactiblePassword = ConfigurationManager.AppSettings["SolucionFactiblePassword"];
@@ -49,18 +50,24 @@ namespace UAGUtileriasSAT
 
             string host = HttpContext.Current.Request.Url.Host.ToLower();
 
-            if (host == "localhost")
+            try //Path
             {
-                /*Local Host*/
+                if (host == "localhost")
+                {
+                    /*Local Host*/
+                    string LocalPath = System.Environment.CurrentDirectory;
+                    filenames = Directory.GetFiles(strLocalUrl + carpeta + "/");
+                }
+                else
+                {
+                    filenames = Directory.GetFiles(HttpContext.Current.Server.MapPath("~/CFDI/" + carpeta + "/"));
 
-                string LocalPath = System.Environment.CurrentDirectory;
-                filenames = Directory.GetFiles(strLocalUrl + carpeta + "/");
+                }
             }
-            else
+            catch (IOException ex)
             {
-                filenames = Directory.GetFiles(HttpContext.Current.Server.MapPath("~/CFDI/" + carpeta + "/"));
+                strerror = ex.GetType().Name + " Message " + ex.Message;
             }
-
             if (filenames.Any())
             {
                 foreach (string filename in filenames)
@@ -226,7 +233,7 @@ namespace UAGUtileriasSAT
             string LocalUrl = ConfigurationManager.AppSettings["LocalUrl"];
             string strLocalUrl = ConfigurationManager.AppSettings["LocalUrl"];
 
-
+            string strerror = string.Empty;
             OperacionComplemento aux = null;
 
             PRNFACTEntities contextUAG = new PRNFACTEntities();
@@ -237,16 +244,23 @@ namespace UAGUtileriasSAT
 
             string host = HttpContext.Current.Request.Url.Host.ToLower();
 
-            if (host == "localhost")
+            try
             {
-                /*Local Host*/
+                if (host == "localhost")
+                {
+                    /*Local Host*/
+                    string LocalPath = System.Environment.CurrentDirectory;
+                    filenames = Directory.GetFiles(strLocalUrl + carpeta + "/");
+                }
+                else
+                {
+                    filenames = Directory.GetFiles(HttpContext.Current.Server.MapPath("~/Complementos/" + carpeta + "/"));
 
-                string LocalPath = System.Environment.CurrentDirectory;
-                filenames = Directory.GetFiles(strLocalUrl + carpeta + "/");
+                }
             }
-            else
+            catch (IOException ex)
             {
-                filenames = Directory.GetFiles(HttpContext.Current.Server.MapPath("~/Complementos/" + carpeta + "/"));
+                strerror = ex.GetType().Name + " Message " + ex.Message;
             }
 
 
