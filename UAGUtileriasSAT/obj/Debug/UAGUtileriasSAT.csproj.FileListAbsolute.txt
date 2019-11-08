@@ -24,7 +24,6 @@ C:\Users\e562926\OneDrive - Universidad Autonoma de Guadalajara\PortalesWebHcout
 C:\Users\e562926\OneDrive - Universidad Autonoma de Guadalajara\PortalesWebHcoutino\UtileriasSAT\UAGUtileriasSAT\bin\EntityFramework.xml
 C:\Users\e562926\OneDrive - Universidad Autonoma de Guadalajara\PortalesWebHcoutino\UtileriasSAT\UAGUtileriasSAT\bin\EntityFramework.SqlServer.xml
 C:\Users\e562926\OneDrive - Universidad Autonoma de Guadalajara\PortalesWebHcoutino\UtileriasSAT\UAGUtileriasSAT\bin\Newtonsoft.Json.xml
-C:\Users\e562926\OneDrive - Universidad Autonoma de Guadalajara\PortalesWebHcoutino\UtileriasSAT\UAGUtileriasSAT\obj\Debug\UAGUtileriasSAT.csprojAssemblyReference.cache
 C:\Users\e562926\OneDrive - Universidad Autonoma de Guadalajara\PortalesWebHcoutino\UtileriasSAT\UAGUtileriasSAT\obj\Debug\UAGUtileriasSAT.csproj.CoreCompileInputs.cache
 C:\Users\e562926\OneDrive - Universidad Autonoma de Guadalajara\PortalesWebHcoutino\UtileriasSAT\UAGUtileriasSAT\obj\Debug\UAGUtileriasSAT.csproj.CopyComplete
 C:\Users\e562926\OneDrive - Universidad Autonoma de Guadalajara\PortalesWebHcoutino\UtileriasSAT\UAGUtileriasSAT\obj\Debug\UAGUtileriasSAT.dll
