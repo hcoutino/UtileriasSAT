@@ -5,11 +5,20 @@ using System.IO;
 using System.Linq;
 using System.Xml;
 using UAGUtileriasSAT.DataBase;
+using UtileriasGlobales.Helpers;
 
 namespace UAGUtileriasSAT.Metodos
 {
     public class Generales
     {
+        #region Constantes
+        private static int yearFactor1 = 2013;
+        private static int monthFactor1 = 1;
+        private static int dayFactor = 1;
+        private static int yearFactor2 = 372;
+        private static int monthFactor2 = 31;
+        #endregion
+
         //Public Variable
         public decimal total;
         public decimal TOTAL
@@ -783,6 +792,115 @@ namespace UAGUtileriasSAT.Metodos
             }*/
 
             return true;
+        }
+
+        /*Generacion de Referncias*/
+        public static String CalculateReference(int id, int folio, DateTime fechaVigencia, decimal importe)
+        {
+            String result = "";
+            String verify = "";
+
+            int referenceId = folio;
+            String strMonth = "" + (fechaVigencia.Month);
+            String strDayOfMonth = "" + fechaVigencia.Day;
+
+            if (strMonth.Length == 1)
+                strMonth = "0" + strMonth;
+            if (strDayOfMonth.Length == 1)
+                strDayOfMonth = "0" + strDayOfMonth;
+
+            String strDueDate = "" + fechaVigencia.Year + strMonth + strDayOfMonth;
+            if (referenceId > 0)
+            {
+                result = id + paddLeft(referenceId.ToString(), 15, '0');
+
+                foreach (int i in getCondensedDueDate(fechaVigencia))
+                    result += i.ToString();
+
+                result += getCondensedAmount(importe) + "2";
+
+                verify = getVerify(result);
+                result += verify;
+
+            }
+            return result;
+        }
+        private static String paddLeft(String value, int finalLen, char pad)
+        {
+            String result = value.Trim();
+            if (result.Length > finalLen)
+            {
+                result = result.Substring(result.Length - finalLen);
+            }
+
+            while (result.Length < finalLen)
+            {
+                result = pad + result;
+            }
+
+            return result;
+        }
+        public static int[] getCondensedDueDate(DateTime dueDate)
+        {
+            int[] result = new int[4];
+
+            int fYear = ((dueDate.Year - yearFactor1) * yearFactor2);
+            int fMonth = ((dueDate.Month - monthFactor1) * monthFactor2);
+            int fDay = dueDate.Day - dayFactor;
+            int accumulator = fYear + fMonth + fDay;
+
+            result[0] = accumulator / 1000;
+            accumulator %= 1000;
+            result[1] = accumulator / 100;
+            accumulator %= 100;
+            result[2] = accumulator / 10;
+            accumulator %= 10;
+            result[3] = accumulator;
+
+            return result;
+        }
+        public static int getCondensedAmount(decimal charge)
+        {
+            int result = 0;
+            int[] factors = new int[] { 7, 3, 1 };
+            int iAmount = (int)Math.Floor(charge);
+            int fAmount = Convert.ToInt32(Math.Round((charge - iAmount) * 100));
+            int accumulator = 0;
+            String sAmount = Reverse(iAmount.ToString()
+                            + (fAmount < 10 ? "0" : "")
+                            + fAmount.ToString());
+
+            int fIndex = 0;
+            foreach (char d in sAmount.ToCharArray())
+            {
+                accumulator += ((d).ToString().ToInteger()) * factors[fIndex % 3];
+                ++fIndex;
+            }
+
+            result = accumulator % 10;
+            return result;
+        }
+        public static String getVerify(String partialReference)
+        {
+            String result = "";
+            int[] factors = new int[] { 11, 13, 17, 19, 23 };
+            int fIndex = 0;
+            int accumulator = 0;
+
+            foreach (char d in Reverse(partialReference).ToCharArray())
+            {
+                accumulator += (d.ToString().ToInteger() * factors[fIndex % 5]);
+                ++fIndex;
+            }
+
+            result = paddLeft(((accumulator % 97) + 1).ToString(), 2, '0');
+            return result;
+        }
+        public static string Reverse(string s)
+        {
+            char[] charArray = s.ToCharArray();
+            Array.Reverse(charArray);
+            return new string(charArray);
         }
     }
 }

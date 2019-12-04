@@ -193,24 +193,43 @@ namespace UAGUtileriasSAT.Metodos
                         XmlNode concepto = xmlConceptos.ChildNodes.Item(x);
                         XmlNode impuestos = concepto.ChildNodes.Item(0);
 
-                        UAG_CFDI_LN linea = new UAG_CFDI_LN();
-                        linea.UAG_CFDI_UUID = (xmlTimbreFiscal.Attributes["UUID"] == null) ? " " : xmlTimbreFiscal.Attributes["UUID"].Value.ToUpper();
-                        linea.UAG_CFDI_NUM_LINEA = count;
-                        linea.UAG_CFDI_PRODSERV = (concepto.Attributes["ClaveProdServ"] == null) ? " " : concepto.Attributes["ClaveProdServ"].Value;
-                        linea.UAG_CFDI_CLVUNIDAD = (concepto.Attributes["ClaveUnidad"] == null) ? " " : concepto.Attributes["ClaveUnidad"].Value;
-                        linea.UAG_CFDI_CANTIDAD = (concepto.Attributes["Cantidad"] == null) ? 0 : decimal.Parse(concepto.Attributes["Cantidad"].Value, new CultureInfo("en-US"));
+                        try
+                        {
+                            UAG_CFDI_LN linea = new UAG_CFDI_LN();
+                            linea.UAG_CFDI_UUID = (xmlTimbreFiscal.Attributes["UUID"] == null) ? " " : xmlTimbreFiscal.Attributes["UUID"].Value.ToUpper();
+                            linea.UAG_CFDI_NUM_LINEA = count;
+                            linea.UAG_CFDI_PRODSERV = (concepto.Attributes["ClaveProdServ"] == null) ? " " : concepto.Attributes["ClaveProdServ"].Value;
+                            linea.UAG_CFDI_CLVUNIDAD = (concepto.Attributes["ClaveUnidad"] == null) ? " " : concepto.Attributes["ClaveUnidad"].Value.Trim();
+                            linea.UAG_CFDI_CANTIDAD = (concepto.Attributes["Cantidad"] == null) ? 0 : decimal.Parse(concepto.Attributes["Cantidad"].Value, new CultureInfo("en-US"));
 
-                        linea.UAG_CFDI_DESCR = (concepto.Attributes["Descripcion"] == null) ? " " :
-                            concepto.Attributes["Descripcion"].Value.Length > 499 ?
-                                concepto.Attributes["Descripcion"].Value.Substring(1, 499) :
-                                    concepto.Attributes["Descripcion"].Value;
+                            linea.UAG_CFDI_DESCR = (concepto.Attributes["Descripcion"] == null) ? " " :
+                                concepto.Attributes["Descripcion"].Value.Length > 499 ?
+                                    concepto.Attributes["Descripcion"].Value.Substring(1, 499) :
+                                        concepto.Attributes["Descripcion"].Value;
 
-                        linea.UAG_CFDI_VALORUNIT = (concepto.Attributes["ValorUnitario"] == null) ? 0 : decimal.Parse(concepto.Attributes["ValorUnitario"].Value, new CultureInfo("en-US"));
-                        linea.UAG_CFDI_IMPORTE = (concepto.Attributes["Importe"] == null) ? 0 : decimal.Parse(concepto.Attributes["Importe"].Value, new CultureInfo("en-US"));
-                        linea.UAG_CFDI_DESCUENTO = (concepto.Attributes["Descuento"] != null) ? decimal.Parse(concepto.Attributes["Descuento"].Value, new CultureInfo("en-US")) : decimal.Parse("0.00", new CultureInfo("en-US"));
-                        contexto.UAG_CFDI_LN.Add(linea);
-                        contexto.SaveChanges();
+                            linea.UAG_CFDI_VALORUNIT = (concepto.Attributes["ValorUnitario"] == null) ? 0 : decimal.Parse(concepto.Attributes["ValorUnitario"].Value, new CultureInfo("en-US"));
+                            linea.UAG_CFDI_IMPORTE = (concepto.Attributes["Importe"] == null) ? 0 : decimal.Parse(concepto.Attributes["Importe"].Value, new CultureInfo("en-US"));
+                            linea.UAG_CFDI_DESCUENTO = (concepto.Attributes["Descuento"] != null) ? decimal.Parse(concepto.Attributes["Descuento"].Value, new CultureInfo("en-US")) : decimal.Parse("0.00", new CultureInfo("en-US"));
+                            contexto.UAG_CFDI_LN.Add(linea);
+                            contexto.SaveChanges();
+                        }
+                        catch (DbEntityValidationException e)
+                        {
+                            string messaex1 = string.Empty;
+                            string messaex2 = string.Empty;
+                            messaex1 = e.Message;
+                            foreach (var eve in e.EntityValidationErrors)
+                            {
+                                messaex1 = "Entity of type \"{0}\" in state \"{1}\" has the following validation errors:" +
+                                    eve.Entry.Entity.GetType().Name + eve.Entry.State;
+                                foreach (var ve in eve.ValidationErrors)
+                                {
+                                    messaex2 = "- Property: \"{0}\", Error: \"{1}\"" + ve.PropertyName + ve.ErrorMessage;
+                                }
 
+
+                            }
+                        }
                         if (impuestos != null)
                         {
                             int countImp = 1;

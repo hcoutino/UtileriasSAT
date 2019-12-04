@@ -10,7 +10,7 @@ using UAGUtileriasSAT.DataBase;
 using UAGUtileriasSAT.Metodos;
 using UAGUtileriasSAT.FacturacionProv;
 using UAGUtileriasSAT.solucionfactible;
-using System.Web.Security;
+using UtileriasGlobales.Helpers;
 
 namespace UAGUtileriasSAT
 {
@@ -22,11 +22,11 @@ namespace UAGUtileriasSAT
         public List<string> mensajes;
 
         // Procesar Invoice XML
-        public SfJsonInvoiceXML ProcesarInvoiceXMLREST(string carpeta)
+        public SfJsonInvoiceXML ProcesarInvoiceXMLREST(string strcarpeta, string strsource)
         {
             //produccion
             PRNFACTEntities contextoCFDI = new PRNFACTEntities();
-            string source = "EX";
+            string source = strsource;
 
             SfJsonInvoiceXML retorno = new SfJsonInvoiceXML();
             retorno.PreExistentes = 0;
@@ -56,11 +56,11 @@ namespace UAGUtileriasSAT
                 {
                     /*Local Host*/
                     string LocalPath = System.Environment.CurrentDirectory;
-                    filenames = Directory.GetFiles(strLocalUrl + carpeta + "/");
+                    filenames = Directory.GetFiles(strLocalUrl + strcarpeta + "/");
                 }
                 else
                 {
-                    filenames = Directory.GetFiles(HttpContext.Current.Server.MapPath("~/CFDI/" + carpeta + "/"));
+                    filenames = Directory.GetFiles(HttpContext.Current.Server.MapPath("~/CFDI/" + strcarpeta + "/"));
 
                 }
             }
@@ -215,11 +215,11 @@ namespace UAGUtileriasSAT
             }
             return retorno;
         }
-
-        public string ProcesarInvoiceXML(string carpeta)
+        public string ProcesarInvoiceXML(string strcarpeta, string strsource)
         {
-            return JsonConvert.SerializeObject(ProcesarInvoiceXMLREST(carpeta));
+            return JsonConvert.SerializeObject(ProcesarInvoiceXMLREST(strcarpeta, strsource));
         }
+
         // ProcesarComplementos
         public SfJsonComplementos ProcesarComplementosREST(string carpeta)
         {
@@ -378,7 +378,6 @@ namespace UAGUtileriasSAT
             }
             return retorno;
         }
-
         public string ProcesarComplementos(string carpeta)
         {
             return JsonConvert.SerializeObject(ProcesarComplementosREST(carpeta));
@@ -400,65 +399,79 @@ namespace UAGUtileriasSAT
         {
             return JsonConvert.SerializeObject(GetVndrPassREST(strRfc));
         }
+
+        //Genera Referncias
+        public RestResponse GenerarReferenciaREST(string SOURCE_REQ, int ID_SEQ_NUM, string DOCUMENT_ID, int DAYS_DURATION, decimal AMOUNT)
+        {
+            RestResponse data = new RestResponse();
+
+            if (!string.IsNullOrEmpty(DOCUMENT_ID))
+            {
+                string UAG_BNK_ID_REF = Generales.CalculateReference(ID_SEQ_NUM, DOCUMENT_ID.ToInteger(), DateTime.Now.AddDays(DAYS_DURATION), AMOUNT);
+                DateTime END_DATE = DateTime.Now.AddDays(DAYS_DURATION);
+
+                PRDUAGPKEntities context = new PRDUAGPKEntities();
+                PS_UAG_REF_BNK_TBL log = new PS_UAG_REF_BNK_TBL
+                {
+                    GUID = Guid.NewGuid().ToString(),
+                    AMOUNT = AMOUNT,
+                    SOURCE_REQ = SOURCE_REQ,
+                    ID_SEQ_NUM = ID_SEQ_NUM,
+                    DOCUMENT_ID = DOCUMENT_ID.ToString(),
+                    DAYS_DURATION = DAYS_DURATION,
+                    UAG_BNK_ID_REF = UAG_BNK_ID_REF,
+                    END_DATE = END_DATE,
+                    CREATE_DATE = DateTime.Now
+                };
+                context.PS_UAG_REF_BNK_TBL.Add(log);
+                context.SaveChanges();
+
+                data = new RestResponse()
+                {
+                    response = true,
+                    message = "Referencia generada correctamente",
+                    ID_SEQ_NUM = ID_SEQ_NUM,
+                    DOCUMENT_ID = DOCUMENT_ID,
+                    DAYS_DURATION = DAYS_DURATION,
+                    AMOUNT = AMOUNT,
+                    END_DATE = string.Format("{0:yyyy-MM-dd}", END_DATE),
+                    UAG_BNK_ID_REF = UAG_BNK_ID_REF
+                };
+            }
+            else
+            {
+                data = new RestResponse()
+                {
+                    response = false,
+                    message = "El parametro DOCUMENT_ID no tiene un formato correcto"
+                };
+            }
+            return data;
+        }
+        public string GenerarReferencia(string SOURCE_REQ, int ID_SEQ_NUM, string DOCUMENT_ID, int DAYS_DURATION, decimal AMOUNT)
+        {
+            return JsonConvert.SerializeObject(GenerarReferenciaREST(SOURCE_REQ, ID_SEQ_NUM, DOCUMENT_ID, DAYS_DURATION, AMOUNT));
+        }
+
+    }
+    /*Genera Referncia Response*/
+    public class RestResponse
+    {
+        public bool response { get; set; }
+        public string message { get; set; }
+        public int ID_SEQ_NUM { get; set; }
+        public string DOCUMENT_ID { get; set; }
+        public int DAYS_DURATION { get; set; }
+        public decimal AMOUNT { get; set; }
+        public string END_DATE { get; set; }
+        public string UAG_BNK_ID_REF { get; set; }
+
     }
     /*Uag Rest Response */
     public class JsonVndrPass
     {
         public string RFC { get; set; }
         public string VNDRPASS { get; set; }
-    }
-    /*Solucion Factible Rest Response*/
-    public class SfJsonEFOEDO
-    {
-        public string ResRFC { get; set; }
-        public string ResCheckType { get; set; }
-        public bool ResExistente { get; set; }
-        public string ResNombre { get; set; }
-        public string ResSituacion { get; set; }
-        public string ResNFechaPresSat { get; set; }
-        public string ResFPubPresSat { get; set; }
-        public string ResNFechaPresDof { get; set; }
-        public string ResFPubPresDof { get; set; }
-        public string ResNFechaDesvSat { get; set; }
-        public string ResNFechaDef { get; set; }
-        public string ResFDesvSat { get; set; }
-        public string ResFDesvDof { get; set; }
-        public string ResFPubDefSat { get; set; }
-        public string ResFPubDefDof { get; set; }
-        public string ResNFechaFavoSat { get; set; }
-        public string ResNFechaFavDof { get; set; }
-        public string ResFFavoSat { get; set; }
-        public string ResFFavoDof { get; set; }
-    }
-    public class RootObject
-    {
-        public Payload payload { get; set; }
-    }
-    public class Payload
-    {
-        public string rfc { get; set; }
-        public string checkType { get; set; }
-        public Resultado resultado { get; set; }
-    }
-    public class Resultado
-    {
-        public bool existente { get; set; }
-        public string nombre { get; set; }
-        public string situacion { get; set; }
-        public string numeroFechaPresuncionSat { get; set; }
-        public string fechaPublicacionPresuncionSat { get; set; }
-        public string numeroFechaPresuncionDof { get; set; }
-        public string fechaPublicacionPresuncionDof { get; set; }
-        public string numeroFechaDesvirtuadosSat { get; set; }
-        public string fechaDesvirtuadosSat { get; set; }
-        public string fechaDesvirtuadosDof { get; set; }
-        public string numeroFechaDefinitivo { get; set; }
-        public string fechaPublicacionDefinitivosSat { get; set; }
-        public string fechaPublicacionDefinitivosDof { get; set; }
-        public string numeroFechaFavorablesSat { get; set; }
-        public string fechaFavorableSat { get; set; }
-        public string numeroFechaFavorableDof { get; set; }
-        public string fechaFavorableDof { get; set; }
     }
     public class SfJsonBuzonTributario
     {
