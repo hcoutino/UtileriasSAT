@@ -5,6 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="d8cf5630cb344613957893068dee730b" Name="Diagram1" >
+        <EntityTypeShape EntityType="PRDUAGPK.PS_UAG_CFDI_CNFG_V" Width="1.5" PointX="3.375" PointY="0.75" />
         <EntityTypeShape EntityType="PRDUAGPK.PS_UAG_REF_BNK_TBL" Width="1.5" PointX="0.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>

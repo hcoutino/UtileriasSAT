@@ -25,6 +25,7 @@ namespace UAGUtileriasSAT.DataBase
             throw new UnintentionalCodeFirstException();
         }
     
+        public DbSet<PS_UAG_CFDI_CNFG_V> PS_UAG_CFDI_CNFG_V { get; set; }
         public DbSet<PS_UAG_REF_BNK_TBL> PS_UAG_REF_BNK_TBL { get; set; }
     }
 }

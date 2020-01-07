@@ -4,15 +4,100 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="PRDUAGPK.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityContainer Name="PRDUAGPKStoreContainer" />
+    <Schema Namespace="PRDUAGPK.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="PS_UAG_REF_BNK_TBL">
+          <Key>
+            <PropertyRef Name="GUID" />
+            <PropertyRef Name="SOURCE_REQ" />
+            <PropertyRef Name="ID_SEQ_NUM" />
+            <PropertyRef Name="UAG_BNK_ID_REF" />
+          </Key>
+          <Property Name="GUID" Type="varchar2" MaxLength="36" Nullable="false" />
+          <Property Name="SOURCE_REQ" Type="varchar2" MaxLength="25" Nullable="false" />
+          <Property Name="ID_SEQ_NUM" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="UAG_BNK_ID_REF" Type="varchar2" MaxLength="24" Nullable="false" />
+          <Property Name="DOCUMENT_ID" Type="varchar2" MaxLength="12" Nullable="false" />
+          <Property Name="DAYS_DURATION" Type="number" Precision="4" Scale="1" Nullable="false" />
+          <Property Name="END_DATE" Type="date" />
+          <Property Name="AMOUNT" Type="number" Precision="26" Scale="3" Nullable="false" />
+          <Property Name="CREATE_DATE" Type="date" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PRDUAGPK.PS_UAG_CFDI_CNFG_V' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="PS_UAG_CFDI_CNFG_V">
+          <Key>
+            <PropertyRef Name="SETID" />
+            <PropertyRef Name="BUSINESS_UNIT" />
+            <PropertyRef Name="UAG_CFDI_RECEPTRFC" />
+            <PropertyRef Name="OPEN_YEAR_FROM" />
+            <PropertyRef Name="OPEN_PERIOD_FROM" />
+            <PropertyRef Name="OPEN_YEAR_TO" />
+            <PropertyRef Name="OPEN_PERIOD_TO" />
+            <PropertyRef Name="FO_USERID" />
+            <PropertyRef Name="FO_PASSWORD" />
+          </Key>
+          <Property Name="SETID" Type="varchar2" MaxLength="5" Nullable="false" />
+          <Property Name="BUSINESS_UNIT" Type="varchar2" MaxLength="5" Nullable="false" />
+          <Property Name="UAG_CFDI_RECEPTRFC" Type="varchar2" MaxLength="13" Nullable="false" />
+          <Property Name="OPEN_YEAR_FROM" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="OPEN_PERIOD_FROM" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="OPEN_FROM_DATE" Type="date" />
+          <Property Name="OPEN_YEAR_TO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="OPEN_PERIOD_TO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="OPEN_TO_DATE" Type="date" />
+          <Property Name="FO_USERID" Type="varchar2" MaxLength="70" Nullable="false" />
+          <Property Name="FO_PASSWORD" Type="varchar2" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="PRDUAGPKStoreContainer">
+          <EntitySet Name="PS_UAG_REF_BNK_TBL" EntityType="Self.PS_UAG_REF_BNK_TBL" Schema="PRDUAGPK" store:Type="Tables" />
+          <EntitySet Name="PS_UAG_CFDI_CNFG_V" EntityType="Self.PS_UAG_CFDI_CNFG_V" store:Type="Views" store:Schema="PRDUAGPK">
+            <DefiningQuery>SELECT 
+"PS_UAG_CFDI_CNFG_V"."SETID" AS "SETID", 
+"PS_UAG_CFDI_CNFG_V"."BUSINESS_UNIT" AS "BUSINESS_UNIT", 
+"PS_UAG_CFDI_CNFG_V"."UAG_CFDI_RECEPTRFC" AS "UAG_CFDI_RECEPTRFC", 
+"PS_UAG_CFDI_CNFG_V"."OPEN_YEAR_FROM" AS "OPEN_YEAR_FROM", 
+"PS_UAG_CFDI_CNFG_V"."OPEN_PERIOD_FROM" AS "OPEN_PERIOD_FROM", 
+"PS_UAG_CFDI_CNFG_V"."OPEN_FROM_DATE" AS "OPEN_FROM_DATE", 
+"PS_UAG_CFDI_CNFG_V"."OPEN_YEAR_TO" AS "OPEN_YEAR_TO", 
+"PS_UAG_CFDI_CNFG_V"."OPEN_PERIOD_TO" AS "OPEN_PERIOD_TO", 
+"PS_UAG_CFDI_CNFG_V"."OPEN_TO_DATE" AS "OPEN_TO_DATE", 
+"PS_UAG_CFDI_CNFG_V"."FO_USERID" AS "FO_USERID", 
+"PS_UAG_CFDI_CNFG_V"."FO_PASSWORD" AS "FO_PASSWORD"
+FROM "PRDUAGPK"."PS_UAG_CFDI_CNFG_V" "PS_UAG_CFDI_CNFG_V"</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PRDUAGPK" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="PRDUAGPKEntities" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="PS_UAG_CFDI_CNFG_V" EntityType="PRDUAGPK.PS_UAG_CFDI_CNFG_V" />
           <EntitySet Name="PS_UAG_REF_BNK_TBL" EntityType="PRDUAGPK.PS_UAG_REF_BNK_TBL" />
         </EntityContainer>
+        <EntityType Name="PS_UAG_CFDI_CNFG_V">
+          <Key>
+            <PropertyRef Name="SETID" />
+            <PropertyRef Name="BUSINESS_UNIT" />
+            <PropertyRef Name="UAG_CFDI_RECEPTRFC" />
+            <PropertyRef Name="OPEN_YEAR_FROM" />
+            <PropertyRef Name="OPEN_PERIOD_FROM" />
+            <PropertyRef Name="OPEN_YEAR_TO" />
+            <PropertyRef Name="OPEN_PERIOD_TO" />
+            <PropertyRef Name="FO_USERID" />
+            <PropertyRef Name="FO_PASSWORD" />
+          </Key>
+          <Property Name="SETID" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="BUSINESS_UNIT" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="UAG_CFDI_RECEPTRFC" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="OPEN_YEAR_FROM" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="OPEN_PERIOD_FROM" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="OPEN_FROM_DATE" Type="DateTime" />
+          <Property Name="OPEN_YEAR_TO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="OPEN_PERIOD_TO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="OPEN_TO_DATE" Type="DateTime" />
+          <Property Name="FO_USERID" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="FO_PASSWORD" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
         <EntityType Name="PS_UAG_REF_BNK_TBL">
           <Key>
             <PropertyRef Name="GUID" />
@@ -36,6 +121,38 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="PRDUAGPKStoreContainer" CdmEntityContainer="PRDUAGPKEntities" >
+          <EntitySetMapping Name="PS_UAG_CFDI_CNFG_V">
+            <EntityTypeMapping TypeName="PRDUAGPK.PS_UAG_CFDI_CNFG_V">
+              <MappingFragment StoreEntitySet="PS_UAG_CFDI_CNFG_V">
+                <ScalarProperty Name="FO_PASSWORD" ColumnName="FO_PASSWORD" />
+                <ScalarProperty Name="FO_USERID" ColumnName="FO_USERID" />
+                <ScalarProperty Name="OPEN_TO_DATE" ColumnName="OPEN_TO_DATE" />
+                <ScalarProperty Name="OPEN_PERIOD_TO" ColumnName="OPEN_PERIOD_TO" />
+                <ScalarProperty Name="OPEN_YEAR_TO" ColumnName="OPEN_YEAR_TO" />
+                <ScalarProperty Name="OPEN_FROM_DATE" ColumnName="OPEN_FROM_DATE" />
+                <ScalarProperty Name="OPEN_PERIOD_FROM" ColumnName="OPEN_PERIOD_FROM" />
+                <ScalarProperty Name="OPEN_YEAR_FROM" ColumnName="OPEN_YEAR_FROM" />
+                <ScalarProperty Name="UAG_CFDI_RECEPTRFC" ColumnName="UAG_CFDI_RECEPTRFC" />
+                <ScalarProperty Name="BUSINESS_UNIT" ColumnName="BUSINESS_UNIT" />
+                <ScalarProperty Name="SETID" ColumnName="SETID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PS_UAG_REF_BNK_TBL">
+            <EntityTypeMapping TypeName="PRDUAGPK.PS_UAG_REF_BNK_TBL">
+              <MappingFragment StoreEntitySet="PS_UAG_REF_BNK_TBL">
+                <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+                <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
+                <ScalarProperty Name="END_DATE" ColumnName="END_DATE" />
+                <ScalarProperty Name="DAYS_DURATION" ColumnName="DAYS_DURATION" />
+                <ScalarProperty Name="DOCUMENT_ID" ColumnName="DOCUMENT_ID" />
+                <ScalarProperty Name="UAG_BNK_ID_REF" ColumnName="UAG_BNK_ID_REF" />
+                <ScalarProperty Name="ID_SEQ_NUM" ColumnName="ID_SEQ_NUM" />
+                <ScalarProperty Name="SOURCE_REQ" ColumnName="SOURCE_REQ" />
+                <ScalarProperty Name="GUID" ColumnName="GUID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

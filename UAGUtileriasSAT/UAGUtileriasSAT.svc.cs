@@ -43,6 +43,7 @@ namespace UAGUtileriasSAT
             string strSolucionFactiblePassword = ConfigurationManager.AppSettings["SolucionFactiblePassword"];
 
             PRNFACTEntities contextUAG = new PRNFACTEntities();
+            PRDUAGPKEntities contextFSCM = new PRDUAGPKEntities();
             string ip = Dns.GetHostName();
 
 
@@ -86,7 +87,7 @@ namespace UAGUtileriasSAT
                         //mensajesForm = Generales.ValidateForm(archivoXML);
                         DateTime fechatemp = DateTime.Today;
                         //DateTime fecha1 = new DateTime(fechatemp.Year, fechatemp.Month, 1);
-                        DateTime fecha1 = new DateTime(fechatemp.Year, 1, 1);
+                        DateTime fecha1 = new DateTime(fechatemp.Year - 1 , 1, 1);
                         DateTime fecha2;
 
                         if (fechatemp.Month + 1 < 13)
@@ -96,11 +97,23 @@ namespace UAGUtileriasSAT
 
 
 
-                        DateTime openFromDate = fecha1;
+                       /* DateTime openFromDate = fecha1;
                         DateTime openToDate = fecha2;
                         int OYF = 2019;
-                        int OYT = 2019;
-                        string UagfRFC = "UAG7806127I8";
+                        int OYT = 2020;
+                        string UagfRFC = "UAG7806127I8";*/
+
+
+                        /*Get Config from PS*/
+                        string BUSSINES_UNIT = "UAG01";
+                        DateTime openFromDate = (DateTime)contextFSCM.PS_UAG_CFDI_CNFG_V.Where(l => l.BUSINESS_UNIT == BUSSINES_UNIT).Select(l => l.OPEN_FROM_DATE).FirstOrDefault().Value.AbsoluteStart();
+                        DateTime openToDate = (DateTime)contextFSCM.PS_UAG_CFDI_CNFG_V.Where(l => l.BUSINESS_UNIT == BUSSINES_UNIT).Select(l => l.OPEN_TO_DATE).FirstOrDefault().Value.AbsoluteEnd();
+                        int OYF = (int)contextFSCM.PS_UAG_CFDI_CNFG_V.Where(l => l.BUSINESS_UNIT == BUSSINES_UNIT).Select(l => l.OPEN_YEAR_FROM).FirstOrDefault();
+                        int OYT = (int)contextFSCM.PS_UAG_CFDI_CNFG_V.Where(l => l.BUSINESS_UNIT == BUSSINES_UNIT).Select(l => l.OPEN_YEAR_TO).FirstOrDefault();
+                        string UagfRFC = (string)contextFSCM.PS_UAG_CFDI_CNFG_V.Where(l => l.BUSINESS_UNIT == BUSSINES_UNIT).Select(l => l.UAG_CFDI_RECEPTRFC).FirstOrDefault();
+                        string userid = (string)contextFSCM.PS_UAG_CFDI_CNFG_V.Where(l => l.BUSINESS_UNIT == BUSSINES_UNIT).Select(l => l.FO_USERID).FirstOrDefault();
+                        string pw = (string)contextFSCM.PS_UAG_CFDI_CNFG_V.Where(l => l.BUSINESS_UNIT == BUSSINES_UNIT).Select(l => l.FO_PASSWORD).FirstOrDefault();
+                        
 
                         Invoice validation = new Invoice(archivoXML, openFromDate, openToDate, OYF, OYT, UagfRFC);
                         mensajes = validation.getValidationMessages();
